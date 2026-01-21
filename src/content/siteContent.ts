@@ -247,7 +247,7 @@ export const siteContent: SiteContent = {
     bookNow: 'Faire une demande',
     inquiryForm: 'Demande de visite',
     send: 'Envoyer',
-    poweredBy: 'Nom a definir',
+    poweredBy: 'Gabriel Le Goat',
   },
   socialLinks: [
     { label: 'TikTok', href: 'https://tiktok.com' },
