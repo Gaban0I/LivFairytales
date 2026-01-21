@@ -1,0 +1,48 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: only light;
+}
+
+@layer base {
+  * {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-300 focus-visible:ring-offset-2 focus-visible:ring-offset-blush-50;
+  }
+
+  body {
+    @apply bg-soft-gradient text-night-900 font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif text-night-900;
+  }
+}
+
+@layer components {
+  .sparkle-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(211, 166, 50, 0.6), transparent);
+  }
+
+  .sparkle-divider::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(211, 166, 50, 0.8);
+    box-shadow: 0 0 12px rgba(211, 166, 50, 0.7);
+  }
+
+  .bg-stars {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.35) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+}
