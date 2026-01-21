@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from 'next';
-import { Manrope, Playfair_Display } from 'next/font/google';
+import { Cinzel_Decorative, Great_Vibes, Montserrat } from 'next/font/google';
 
 import '@/styles/globals.css';
 
@@ -7,13 +7,21 @@ import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 import { siteContent } from '@/content/siteContent';
 
-const serif = Playfair_Display({
+const titleFont = Cinzel_Decorative({
   subsets: ['latin'],
-  variable: '--font-serif',
+  variable: '--font-title',
   display: 'swap',
+  weight: ['400', '700'],
 });
 
-const sans = Manrope({
+const accentFont = Great_Vibes({
+  subsets: ['latin'],
+  variable: '--font-accent',
+  display: 'swap',
+  weight: ['400'],
+});
+
+const bodyFont = Montserrat({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
@@ -31,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={`${titleFont.variable} ${accentFont.variable} ${bodyFont.variable}`}>
       <body className="bg-stars">
         <div className="flex min-h-screen flex-col">
           <SiteHeader />

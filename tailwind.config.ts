@@ -45,7 +45,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+        title: ['var(--font-title)', 'Georgia', 'serif'],
+        accent: ['var(--font-accent)', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
