@@ -157,7 +157,10 @@ export function SiteHeader() {
 
       {open ? (
         <div className="fixed inset-0 z-50 bg-night-900/40 backdrop-blur-sm" role="dialog" aria-modal="true">
-          <div ref={menuRef} className="absolute right-0 top-0 h-full w-full max-w-sm bg-white px-6 py-6">
+          <div
+            ref={menuRef}
+            className="absolute right-0 top-0 h-full w-full max-w-sm bg-white/95 px-6 py-6 shadow-magic"
+          >
             <div className="flex items-center justify-between">
               <span className="text-lg font-semibold">{siteContent.brandName}</span>
               <button
