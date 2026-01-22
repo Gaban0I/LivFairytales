@@ -242,12 +242,12 @@ export const siteContent: SiteContent = {
     closeMenu: 'Fermer',
     viewMore: 'Voir plus',
     learnMore: 'En savoir plus',
-    applyNow: 'Devenir benevole',
+    applyNow: 'Devenir bénévole',
     donateNow: 'Soutenir',
     bookNow: 'Faire une demande',
     inquiryForm: 'Demande de visite',
     send: 'Envoyer',
-    poweredBy: 'Gabriel Le Goat',
+    poweredBy: 'Nom à définir',
   },
   socialLinks: [
     { label: 'TikTok', href: 'https://tiktok.com' },
@@ -257,11 +257,11 @@ export const siteContent: SiteContent = {
   navigation: {
     primary: [
       {
-        label: 'A propos',
+        label: 'À propos',
         children: [
           { label: 'Notre histoire', href: '/about' },
-          { label: 'Equipe', href: '/about#executive-board' },
-          { label: 'Actualites', href: '/about#in-the-news' },
+          { label: 'Équipe', href: '/about#executive-board' },
+          { label: 'Actualités', href: '/about#in-the-news' },
         ],
       },
       { label: 'Nos actions', href: '/how-we-help' },
@@ -282,62 +282,62 @@ export const siteContent: SiteContent = {
     home: {
       title: 'Liv Fairytales - Offrir de la magie aux enfants et aux adultes',
       description:
-        'Association benevole qui rend visite aux enfants, adolescents et adultes en etablissement medical ou a domicile, pour offrir de la joie et du reconfort.',
+        'Association bénévole qui rend visite aux enfants, adolescents et adultes en établissement médical ou à domicile, pour offrir de la joie et du réconfort.',
       ogImage: '/images/placeholder-og-home.png',
     },
     about: {
       title: 'Notre histoire - Liv Fairytales',
-      description: 'Decouvrez la mission, les valeurs et l origine de l association Liv Fairytales.',
+      description: "Découvrez la mission, les valeurs et l'origine de l'association Liv Fairytales.",
       ogImage: '/images/placeholder-og-about.png',
     },
     howWeHelp: {
       title: 'Nos actions - Liv Fairytales',
-      description: 'Des visites adaptees en hopital, a domicile et en EHPAD pour offrir des instants magiques.',
+      description: 'Des visites adaptées en hôpital, à domicile et en EHPAD pour offrir des instants magiques.',
       ogImage: '/images/placeholder-og-how.png',
     },
     book: {
       title: 'Demander une visite - Liv Fairytales',
-      description: 'Choisissez la formule adaptee a vos besoins et faites une demande de visite.',
+      description: 'Choisissez la formule adaptée à vos besoins et faites une demande de visite.',
       ogImage: '/images/placeholder-og-book.png',
     },
     support: {
       title: 'Soutenir Liv Fairytales',
-      description: 'Aidez nous a financer les costumes, les cadeaux et la logistique des visites.',
+      description: 'Aidez-nous à financer les costumes, les cadeaux et la logistique des visites.',
       ogImage: '/images/placeholder-og-support.png',
     },
     contact: {
       title: 'Contact - Liv Fairytales',
-      description: 'Contactez l association pour organiser une visite ou devenir benevole.',
+      description: "Contactez l'association pour organiser une visite ou devenir bénévole.",
       ogImage: '/images/placeholder-og-contact.png',
     },
     extras: {
       title: 'Extras - Liv Fairytales',
-      description: 'Ressources et contenus supplementaires de l association.',
+      description: "Ressources et contenus supplémentaires de l'association.",
       ogImage: '/images/placeholder-og-extras.png',
     },
     notFound: {
       title: 'Page introuvable - Liv Fairytales',
-      description: 'La page demandee est introuvable.',
+      description: 'La page demandée est introuvable.',
       ogImage: '/images/placeholder-og-404.png',
     },
   },
   home: {
     hero: {
-      badge: 'Association benevole',
-      titleLine1: 'Offrir du reve',
-      titleLine2: 'au coeur des soins',
+      badge: 'Association bénévole',
+      titleLine1: 'Offrir du rêve',
+      titleLine2: 'au cœur des soins',
       subtitle:
-        'Liv Fairytales rend visite aux enfants, adolescents et adultes en situation de vulnerabilite pour apporter joie, reconfort et instants magiques.',
+        'Liv Fairytales rend visite aux enfants, adolescents et adultes en situation de vulnérabilité pour apporter joie, réconfort et instants magiques.',
       ctaLabel: 'Demander une visite',
-      secondaryCtaLabel: 'Devenir benevole',
+      secondaryCtaLabel: 'Devenir bénévole',
       backgroundImage: {
         src: '/images/placeholder-hero.png',
-        alt: 'Visite magique en structure medicale',
+        alt: 'Visite magique en structure médicale',
       },
       card: {
         title: 'Des visites 100% gratuites',
-        body: 'Nos interventions sont benevoles et adaptees a chaque structure et a chaque famille.',
-        stats: ['Hopital', 'Domicile', 'EHPAD', 'Adolescents'],
+        body: 'Nos interventions sont bénévoles et adaptées à chaque structure et à chaque famille.',
+        stats: ['Hôpital', 'Domicile', 'EHPAD', 'Adolescents'],
       },
     },
     gallery: {
@@ -353,48 +353,48 @@ export const siteContent: SiteContent = {
       ],
     },
     story: {
-      title: 'Une mission nee du coeur et du vecu',
+      title: 'Une mission née du cœur et du vécu',
       body:
-        'Creee par Olivia Guzniczak, Liv Fairytales est nee d une experience personnelle du milieu hospitalier et d une passion pour le cosplay et l aide aux autres.',
+        "Créée par Olivia Guzniczak, Liv Fairytales est née d'une expérience personnelle du milieu hospitalier et d'une passion pour le cosplay et l'aide aux autres.",
       image: { src: '/images/placeholder-story.png', alt: 'Fondatrice de Liv Fairytales' },
       ctaLabel: 'Notre histoire',
       ctaHref: '/about',
     },
     schedule: {
       title: 'Programmer votre moment magique',
-      subtitle: 'Des formules adapteees selon l age, la structure et les besoins.',
-      chips: ['Hopital', 'Domicile', 'EHPAD'],
+      subtitle: "Des formules adaptées selon l'âge, la structure et les besoins.",
+      chips: ['Hôpital', 'Domicile', 'EHPAD'],
       ctaLabel: 'Faire une demande',
       ctaHref: '/book',
     },
     join: {
-      title: 'Devenez benevole',
+      title: 'Devenez bénévole',
       body:
-        'Cosplayeur, soignant, animateur ou passionne de contact humain, rejoignez l aventure et offrez des instants de magie.',
+        "Cosplayeur, soignant, animateur ou passionné de contact humain, rejoignez l'aventure et offrez des instants de magie.",
       ctaLabel: 'Nous rejoindre',
       ctaHref: 'mailto:contact@livfairytales.fr',
     },
     donate: {
       title: 'Soutenir nos actions',
       body:
-        'Vos dons financent costumes, cadeaux, materiel creatif et deplacements pour des visites gratuites.',
+        'Vos dons financent costumes, cadeaux, matériel créatif et déplacements pour des visites gratuites.',
       ctaLabel: 'Faire un don',
       ctaHref: 'mailto:contact@livfairytales.fr',
     },
     event: {
       title: 'Des rencontres\nqui laissent une trace',
       body:
-        'Nous intervenons selon les disponibilites des benevoles et adaptons chaque visite aux besoins medicaux et emotifs.',
-      ctaLabel: 'Contactez nous',
+        'Nous intervenons selon les disponibilités des bénévoles et adaptons chaque visite aux besoins médicaux et émotionnels.',
+      ctaLabel: 'Contactez-nous',
       ctaHref: '/contact',
     },
     eventCard: {
       title: 'Ce que nous offrons',
-      body: 'Chaque visite est unique et co construite avec les equipes ou les familles.',
-      items: ['Entree en musique si possible', 'Lecture et activites creatrices', 'Photos souvenir et autographe'],
+      body: "Chaque visite est unique et co-construite avec les équipes ou les familles.",
+      items: ['Entrée en musique si possible', 'Lecture et activités créatives', 'Photos souvenir et autographes'],
     },
     finalGallery: {
-      headline: 'Offrons des sourires la ou ils sont le plus necessaires',
+      headline: 'Offrons des sourires là où ils sont le plus nécessaires',
       buttonLabel: 'Voir nos formules',
       buttonHref: '/book',
       image: { src: '/images/placeholder-final-gallery.png', alt: 'Final magique' },
@@ -402,23 +402,23 @@ export const siteContent: SiteContent = {
   },
   book: {
     intro: {
-      title: 'Choisissez la formule adaptee',
+      title: 'Choisissez la formule adaptée',
       subtitle:
-        'Toutes les visites sont gratuites. Les disponibilites dependent de nos benevoles et un delai d attente peut etre necessaire.',
+        "Toutes les visites sont gratuites. Les disponibilités dépendent de nos bénévoles et un délai d'attente peut être nécessaire.",
     },
     cards: [
       {
-        title: 'Visite hopital 1h',
+        title: 'Visite hôpital 1h',
         description:
-          'Jusqu a 2 personnages. Entree en musique si possible, lecture, cadeau de coloriage, photo polaroid et autographe.',
+          'Jusqu à 2 personnages. Entrée en musique si possible, lecture, cadeau de coloriage, photo polaroid et autographe.',
         ctaLabel: 'Faire une demande',
         ctaHref: 'mailto:contact@livfairytales.fr',
-        image: { src: '/images/placeholder-book-1.png', alt: 'Visite hopital' },
+        image: { src: '/images/placeholder-book-1.png', alt: 'Visite hôpital' },
       },
       {
         title: 'Visite domicile 1h30',
         description:
-          'Jusqu a 7 enfants, 2 personnages. Activite manuelle, lecture, danse ou mini spectacle, photo et autographe.',
+          'Jusqu à 7 enfants, 2 personnages. Activité manuelle, lecture, danse ou mini-spectacle, photo et autographe.',
         ctaLabel: 'Faire une demande',
         ctaHref: 'mailto:contact@livfairytales.fr',
         image: { src: '/images/placeholder-book-2.png', alt: 'Visite domicile' },
@@ -426,7 +426,7 @@ export const siteContent: SiteContent = {
       {
         title: 'Visite domicile 2h avec ACC',
         description:
-          'Jusqu a 15 enfants, 3 personnages. Couronnement, encadrement du gouter si prevu, activites et photo souvenir.',
+          'Jusqu à 15 enfants, 3 personnages. Couronnement, encadrement du goûter si prévu, activités et photo souvenir.',
         ctaLabel: 'Faire une demande',
         ctaHref: 'mailto:contact@livfairytales.fr',
         image: { src: '/images/placeholder-book-3.png', alt: 'Visite domicile avec ACC' },
@@ -434,7 +434,7 @@ export const siteContent: SiteContent = {
       {
         title: 'Formules adultes et EHPAD',
         description:
-          'Interventions adaptees pour MAS, EHPAD ou psychiatrie ado. Chants, karaoke, activites manuelles et temps d echange.',
+          "Interventions adaptées pour MAS, EHPAD ou psychiatrie ado. Chants, karaoké, activités manuelles et temps d'échange.",
         ctaLabel: 'Faire une demande',
         ctaHref: 'mailto:contact@livfairytales.fr',
         image: { src: '/images/placeholder-book-4.png', alt: 'Visites adultes' },
@@ -455,49 +455,48 @@ export const siteContent: SiteContent = {
   },
   howWeHelp: {
     hero: {
-      title: 'Des visites adaptees a chaque situation',
+      title: 'Des visites adaptées à chaque situation',
       subtitle:
-        'Hopital, domicile, EHPAD ou structures specialisees, nous adaptons nos interventions aux besoins et aux contraintes.',
-      image: { src: '/images/placeholder-how-hero.png', alt: 'Equipe Liv Fairytales' },
+        'Hôpital, domicile, EHPAD ou structures spécialisées, nous adaptons nos interventions aux besoins et aux contraintes.',
+      image: { src: '/images/placeholder-how-hero.png', alt: 'Équipe Liv Fairytales' },
       ctaLabel: 'Demander une visite',
     },
     sections: [
       {
         title: 'Formules enfants',
         body:
-          'Entrees en musique, lecture d histoires, activites manuelles, cadeaux et photos polaroid avec autographe.',
+          "Entrées en musique, lecture d'histoires, activités manuelles, cadeaux et photos polaroid avec autographe.",
         image: { src: '/images/placeholder-how-1.png', alt: 'Formules enfants' },
       },
       {
         title: 'Formules adultes et EHPAD',
         body:
-          'Visites adaptees, chants et karaoke, activites creatrices et temps d echange avec les residents et familles.',
+          "Visites adaptées, chants et karaoké, activités créatives et temps d'échange avec les résidents et familles.",
         image: { src: '/images/placeholder-how-2.png', alt: 'Formules adultes' },
       },
       {
         title: 'Personnages disponibles',
         body:
-          'Belle, Elsa, Anna, Raiponce, Ariel, et d autres personnages bientot disponibles selon les benevoles.',
+          "Belle, Elsa, Anna, Raiponce, Ariel, et d'autres personnages bientôt disponibles selon les bénévoles.",
         image: { src: '/images/placeholder-how-3.png', alt: 'Personnages' },
       },
     ],
     impact: {
       title: 'Un impact humain durable',
-      body:
-        'Nous offrons des sourires, du reconfort et des instants d evasion aux personnes malades ou vulnerables.',
+      body: "Nous offrons des sourires, du réconfort et des instants d'évasion aux personnes malades ou vulnérables.",
     },
     safety: {
-      title: 'Cadre et securite',
+      title: 'Cadre et sécurité',
       body:
-        'Respect des regles d hygiene hospitaliere, des consignes des familles et des structures, et formation des benevoles.',
+        "Respect des règles d'hygiène hospitalière, des consignes des familles et des structures, et formation des bénévoles.",
     },
     cta: {
-      title: 'Une visite 100% adaptee',
+      title: 'Une visite 100% adaptée',
       body:
-        'Chaque demande est etudiee avec attention pour proposer une intervention respectueuse et sur mesure.',
+        'Chaque demande est étudiée avec attention pour proposer une intervention respectueuse et sur mesure.',
       primaryLabel: 'Demander une visite',
       primaryHref: '/book',
-      secondaryLabel: 'Soutenir l association',
+      secondaryLabel: "Soutenir l'association",
       secondaryHref: '/support',
     },
   },
@@ -505,56 +504,54 @@ export const siteContent: SiteContent = {
     hero: {
       title: 'Notre histoire',
       subtitle:
-        'Liv Fairytales est une association nee d une double passion pour la sante et le cosplay, fondee par Olivia Guzniczak.',
+        "Liv Fairytales est une association née d'une double passion pour la santé et le cosplay, fondée par Olivia Guzniczak.",
       image: { src: '/images/placeholder-about-hero.png', alt: 'Notre histoire' },
       ctaLabel: 'Nous contacter',
     },
-    timelineTitle: 'Les grandes etapes',
-    boardSubtitle: 'Des benevoles engages et des professionnels de sante.',
+    timelineTitle: 'Les grandes étapes',
+    boardSubtitle: 'Des bénévoles engagés et des professionnels de santé.',
     newsSubtitle: 'Ils parlent de nous et de nos actions solidaires.',
     newsReadMoreLabel: 'Lire',
     timeline: [
       {
         title: 'Une vocation personnelle',
         body:
-          'Une experience du milieu hospitalier a inspire la creation de Liv Fairytales pour apporter du reconfort.',
+          "Une expérience du milieu hospitalier a inspiré la création de Liv Fairytales pour apporter du réconfort.",
       },
       {
         title: 'Allier soin et imagination',
-        body:
-          'Cosplay et bienveillance se rencontrent pour creer des visites inoubliables.',
+        body: 'Cosplay et bienveillance se rencontrent pour créer des visites inoubliables.',
       },
       {
-        title: 'Une equipe benevole',
-        body:
-          'Cosplayeurs, soignants, animateurs et passionnes unis pour offrir des moments magiques.',
+        title: 'Une équipe bénévole',
+        body: 'Cosplayeurs, soignants, animateurs et passionnés unis pour offrir des moments magiques.',
       },
     ],
     board: {
-      title: 'Notre equipe',
+      title: 'Notre équipe',
       members: [
         {
           name: 'Olivia Guzniczak',
           role: 'Fondatrice',
-          bio: 'Diabetique de type 1 et aide soignante en formation, elle a fondé Liv Fairytales pour offrir du reve aux patients.',
+          bio: 'Diabétique de type 1 et aide-soignante en formation, elle a fondé Liv Fairytales pour offrir du rêve aux patients.',
           image: { src: '/images/team-1.jpg', alt: 'Olivia Guzniczak' },
         },
         {
-          name: 'Benevole principal',
-          role: 'Coordinateur visites',
-          bio: 'Organisation des visites et accompagnement des nouveaux benevoles.',
-          image: { src: '/images/team-2.jpg', alt: 'Coordinateur visites' },
+          name: 'Bénévole principal',
+          role: 'Coordinateur des visites',
+          bio: 'Organisation des visites et accompagnement des nouveaux bénévoles.',
+          image: { src: '/images/team-2.jpg', alt: 'Coordinateur des visites' },
         },
         {
-          name: 'Equipe soignante',
-          role: 'Referents sante',
-          bio: 'Garants du cadre medical, des formations et des bonnes pratiques.',
-          image: { src: '/images/team-3.jpg', alt: 'Equipe soignante' },
+          name: 'Équipe soignante',
+          role: 'Référents santé',
+          bio: 'Garants du cadre médical, des formations et des bonnes pratiques.',
+          image: { src: '/images/team-3.jpg', alt: 'Équipe soignante' },
         },
       ],
     },
     news: {
-      title: 'Dans les medias',
+      title: 'Dans les médias',
       items: [
         {
           outlet: 'Presse locale',
@@ -567,8 +564,8 @@ export const siteContent: SiteContent = {
           href: '#',
         },
         {
-          outlet: 'Blog sante',
-          headline: 'Des benevoles pour des moments de reve',
+          outlet: 'Blog santé',
+          headline: 'Des bénévoles pour des moments de rêve',
           href: '#',
         },
       ],
@@ -578,27 +575,27 @@ export const siteContent: SiteContent = {
     donation: {
       title: 'Soutenir Liv Fairytales',
       body:
-        'Vos dons permettent de financer les costumes, les cadeaux, les supports creatifs et les deplacements.',
+        'Vos dons permettent de financer les costumes, les cadeaux, les supports créatifs et les déplacements.',
       ctaLabel: 'Faire un don',
       ctaHref: 'mailto:contact@livfairytales.fr',
       cardTitle: 'Partenaires et sponsors',
-      cardBody: 'Vous etes une entreprise ou une structure solidaire ? Parlons d un partenariat engage.',
-      cardCtaLabel: 'Nous ecrire',
+      cardBody: "Vous êtes une entreprise ou une structure solidaire ? Parlons d'un partenariat engagé.",
+      cardCtaLabel: 'Nous écrire',
     },
     ways: {
-      title: 'Autres manieres de soutenir',
+      title: 'Autres manières de soutenir',
       items: [
         {
-          title: 'Devenir benevole',
+          title: 'Devenir bénévole',
           body: 'Cosplayeurs, soignants, animateurs et accompagnateurs sont les bienvenus.',
         },
         {
-          title: 'Materiel et cadeaux',
-          body: 'Contribuez avec du materiel creatif, des livres de coloriage ou des accessoires.',
+          title: 'Matériel et cadeaux',
+          body: 'Contribuez avec du matériel créatif, des livres de coloriage ou des accessoires.',
         },
         {
-          title: 'Relais et visibilite',
-          body: 'Partagez nos actions pour faire grandir la communaute Liv Fairytales.',
+          title: 'Relais et visibilité',
+          body: 'Partagez nos actions pour faire grandir la communauté Liv Fairytales.',
         },
       ],
     },
@@ -606,18 +603,18 @@ export const siteContent: SiteContent = {
       title: 'FAQ',
       items: [
         {
-          question: 'Les visites sont elles payantes ?',
-          answer: 'Non. Toutes les visites sont gratuites et realisees benevolement.',
+          question: 'Les visites sont-elles payantes ?',
+          answer: 'Non. Toutes les visites sont gratuites et réalisées bénévolement.',
         },
         {
           question: 'Qui peut faire une demande de visite ?',
           answer:
-            'Parents, structures medicales et associations a but non lucratif peuvent nous contacter.',
+            'Parents, structures médicales et associations à but non lucratif peuvent nous contacter.',
         },
         {
-          question: 'Y a t il un delai d attente ?',
+          question: "Y a-t-il un délai d'attente ?",
           answer:
-            'Oui, selon le planning et les disponibilites des benevoles, un delai peut etre necessaire.',
+            'Oui, selon le planning et les disponibilités des bénévoles, un délai peut être nécessaire.',
         },
       ],
     },
@@ -625,7 +622,7 @@ export const siteContent: SiteContent = {
   contact: {
     hero: {
       title: 'Contactez Liv Fairytales',
-      subtitle: 'Echangeons sur une visite, un partenariat ou un engagement benevole.',
+      subtitle: 'Échangeons sur une visite, un partenariat ou un engagement bénévole.',
     },
     form: {
       nameLabel: 'Nom complet',
@@ -634,16 +631,16 @@ export const siteContent: SiteContent = {
       messageLabel: 'Votre message',
       namePlaceholder: 'Votre nom',
       emailPlaceholder: 'votre@email.fr',
-      subjectPlaceholder: 'Demande de visite, benevolat, partenariat...',
+      subjectPlaceholder: 'Demande de visite, bénévolat, partenariat...',
       messagePlaceholder: 'Expliquez votre contexte et vos besoins.',
       buttonLabel: 'Envoyer la demande',
-      successMessage: 'Merci. Votre message a ete pris en compte.',
+      successMessage: 'Merci. Votre message a été pris en compte.',
       mailto: 'mailto:contact@livfairytales.fr',
     },
     locations: {
-      title: 'Ou nous intervenons',
+      title: 'Où nous intervenons',
       body:
-        'Hopitaux, structures specialisees, domicile (selon conditions) et EHPAD, en fonction des demandes et disponibilites.',
+        'Hôpitaux, structures spécialisées, domicile (selon conditions) et EHPAD, en fonction des demandes et des disponibilités.',
     },
     social: {
       title: 'Suivez nos actions',
@@ -651,12 +648,12 @@ export const siteContent: SiteContent = {
   },
   extras: {
     merch: {
-      title: 'Merch bientot disponible',
-      body: 'Bientot une boutique solidaire pour soutenir nos actions.',
+      title: 'Merch bientôt disponible',
+      body: 'Bientôt une boutique solidaire pour soutenir nos actions.',
     },
     partnerships: {
       title: 'Partenariats',
-      body: 'Echangeons pour construire des actions solidaires avec votre structure.',
+      body: 'Échangeons pour construire des actions solidaires avec votre structure.',
     },
     resources: {
       title: 'Ressources',
@@ -665,10 +662,10 @@ export const siteContent: SiteContent = {
   },
   notFound: {
     title: 'Page introuvable',
-    body: 'Cette page n existe pas ou a ete deplacee.',
-    ctaHome: 'Retour a l accueil',
+    body: "Cette page n'existe pas ou a été déplacée.",
+    ctaHome: "Retour à l'accueil",
     ctaContact: 'Nous contacter',
-    secondaryLink: 'Retour a l accueil',
+    secondaryLink: "Retour à l'accueil",
   },
   footer: {
     columns: [
@@ -681,17 +678,17 @@ export const siteContent: SiteContent = {
         ],
       },
       {
-        title: 'A propos',
+        title: 'À propos',
         links: [
           { label: 'Notre histoire', href: '/about' },
-          { label: 'Equipe', href: '/about#executive-board' },
-          { label: 'Actualites', href: '/about#in-the-news' },
+          { label: 'Équipe', href: '/about#executive-board' },
+          { label: 'Actualités', href: '/about#in-the-news' },
         ],
       },
       {
         title: 'Nous rejoindre',
         links: [
-          { label: 'Devenir benevole', href: 'mailto:contact@livfairytales.fr' },
+          { label: 'Devenir bénévole', href: 'mailto:contact@livfairytales.fr' },
           { label: 'Soutenir', href: '/support' },
           { label: 'FAQ', href: '/support' },
         ],
@@ -707,13 +704,13 @@ export const siteContent: SiteContent = {
       {
         title: 'Contact',
         links: [
-          { label: 'Nous ecrire', href: 'mailto:contact@livfairytales.fr' },
-          { label: 'Suivre nos reseaux', href: '/contact' },
+          { label: 'Nous écrire', href: 'mailto:contact@livfairytales.fr' },
+          { label: 'Suivre nos réseaux', href: '/contact' },
           { label: 'Faire un don', href: '/support' },
         ],
       },
     ],
-    copyright: '© 2026 Liv Fairytales. Tous droits reserves.',
+    copyright: '© 2026 Liv Fairytales. Tous droits réservés.',
     poweredByLabel: 'Powered by',
   },
 };
