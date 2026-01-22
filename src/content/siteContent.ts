@@ -372,14 +372,14 @@ export const siteContent: SiteContent = {
       body:
         "Cosplayeur, soignant, animateur ou passionné de contact humain, rejoignez l'aventure et offrez des instants de magie.",
       ctaLabel: 'Nous rejoindre',
-      ctaHref: 'mailto:contact@livfairytales.fr',
+      ctaHref: 'mailto:livfairytales@gmail.com',
     },
     donate: {
       title: 'Soutenir nos actions',
       body:
         'Vos dons financent costumes, cadeaux, matériel créatif et déplacements pour des visites gratuites.',
       ctaLabel: 'Faire un don',
-      ctaHref: 'mailto:contact@livfairytales.fr',
+      ctaHref: 'mailto:livfairytales@gmail.com',
     },
     event: {
       title: 'Des rencontres\nqui laissent une trace',
@@ -412,7 +412,7 @@ export const siteContent: SiteContent = {
         description:
           'Jusqu à 2 personnages. Entrée en musique si possible, lecture, cadeau de coloriage, photo polaroid et autographe.',
         ctaLabel: 'Faire une demande',
-        ctaHref: 'mailto:contact@livfairytales.fr',
+        ctaHref: 'mailto:livfairytales@gmail.com',
         image: { src: '/images/placeholder-book-1.png', alt: 'Visite hôpital' },
       },
       {
@@ -420,7 +420,7 @@ export const siteContent: SiteContent = {
         description:
           'Jusqu à 7 enfants, 2 personnages. Activité manuelle, lecture, danse ou mini-spectacle, photo et autographe.',
         ctaLabel: 'Faire une demande',
-        ctaHref: 'mailto:contact@livfairytales.fr',
+        ctaHref: 'mailto:livfairytales@gmail.com',
         image: { src: '/images/placeholder-book-2.png', alt: 'Visite domicile' },
       },
       {
@@ -428,7 +428,7 @@ export const siteContent: SiteContent = {
         description:
           'Jusqu à 15 enfants, 3 personnages. Couronnement, encadrement du goûter si prévu, activités et photo souvenir.',
         ctaLabel: 'Faire une demande',
-        ctaHref: 'mailto:contact@livfairytales.fr',
+        ctaHref: 'mailto:livfairytales@gmail.com',
         image: { src: '/images/placeholder-book-3.png', alt: 'Visite domicile avec ACC' },
       },
       {
@@ -436,7 +436,7 @@ export const siteContent: SiteContent = {
         description:
           "Interventions adaptées pour MAS, EHPAD ou psychiatrie ado. Chants, karaoké, activités manuelles et temps d'échange.",
         ctaLabel: 'Faire une demande',
-        ctaHref: 'mailto:contact@livfairytales.fr',
+        ctaHref: 'mailto:livfairytales@gmail.com',
         image: { src: '/images/placeholder-book-4.png', alt: 'Visites adultes' },
       },
     ],
@@ -577,7 +577,7 @@ export const siteContent: SiteContent = {
       body:
         'Vos dons permettent de financer les costumes, les cadeaux, les supports créatifs et les déplacements.',
       ctaLabel: 'Faire un don',
-      ctaHref: 'mailto:contact@livfairytales.fr',
+      ctaHref: 'mailto:livfairytales@gmail.com',
       cardTitle: 'Partenaires et sponsors',
       cardBody: "Vous êtes une entreprise ou une structure solidaire ? Parlons d'un partenariat engagé.",
       cardCtaLabel: 'Nous écrire',
@@ -635,7 +635,7 @@ export const siteContent: SiteContent = {
       messagePlaceholder: 'Expliquez votre contexte et vos besoins.',
       buttonLabel: 'Envoyer la demande',
       successMessage: 'Merci. Votre message a été pris en compte.',
-      mailto: 'mailto:contact@livfairytales.fr',
+      mailto: 'mailto:livfairytales@gmail.com',
     },
     locations: {
       title: 'Où nous intervenons',
@@ -688,7 +688,7 @@ export const siteContent: SiteContent = {
       {
         title: 'Nous rejoindre',
         links: [
-          { label: 'Devenir bénévole', href: 'mailto:contact@livfairytales.fr' },
+          { label: 'Devenir bénévole', href: 'mailto:livfairytales@gmail.com' },
           { label: 'Soutenir', href: '/support' },
           { label: 'FAQ', href: '/support' },
         ],
@@ -704,7 +704,7 @@ export const siteContent: SiteContent = {
       {
         title: 'Contact',
         links: [
-          { label: 'Nous écrire', href: 'mailto:contact@livfairytales.fr' },
+          { label: 'Nous écrire', href: 'mailto:livfairytales@gmail.com' },
           { label: 'Suivre nos réseaux', href: '/contact' },
           { label: 'Faire un don', href: '/support' },
         ],
