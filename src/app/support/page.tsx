@@ -1,10 +1,10 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import { Accordion } from '@/components/ui/Accordion';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
-import { Reveal } from '@/components/ui/Reveal';
+import { Reveal } from '@/components/motion/Reveal';
 import { siteContent } from '@/content/siteContent';
 
 export const metadata: Metadata = {

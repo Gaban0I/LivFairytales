@@ -79,13 +79,23 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const socialIcons = [FaTiktok, FaInstagram, FaFacebookF];
 
   useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 8);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     if (!open) {
       document.body.style.overflow = '';
-      return;
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
     }
 
     document.body.style.overflow = 'hidden';
@@ -111,13 +121,18 @@ export function SiteHeader() {
 
     document.addEventListener('keydown', handleKeydown);
     return () => {
+      window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('keydown', handleKeydown);
       document.body.style.overflow = '';
     };
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/60 bg-white/80 backdrop-blur">
+    <header
+      className={`sticky top-0 z-40 border-b border-white/60 backdrop-blur transition ${
+        scrolled ? 'bg-white/95 shadow-lg' : 'bg-white/80'
+      }`}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
         <Link href="/" className="flex items-center gap-3">
           <div className="relative h-10 w-10 overflow-hidden rounded-full border border-white/70">

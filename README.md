@@ -56,3 +56,25 @@ Global styles are in:
 Tailwind theme tokens are in:
 
 - `tailwind.config.ts`
+
+## Animations
+
+Animations are powered by Framer Motion and reusable motion helpers:
+
+- `src/components/motion/Reveal.tsx`
+- `src/components/motion/Stagger.tsx`
+- `src/components/motion/MagicButton.tsx`
+- `src/components/motion/SparkleDivider.tsx`
+
+### Usage
+
+- Wrap sections with `<Reveal>` for scroll animations.
+- Wrap grids with `<Stagger>` and each item with `<StaggerItem>`.
+- Use `<MagicButton>` for primary CTAs.
+
+### Reduced motion
+
+Animations respect `prefers-reduced-motion`. To test:
+
+- macOS: System Settings → Accessibility → Display → Reduce motion
+- Windows: Settings → Accessibility → Visual effects → Animation effects

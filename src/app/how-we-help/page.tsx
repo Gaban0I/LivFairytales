@@ -1,12 +1,12 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { CTA } from '@/components/ui/CTA';
-import { Divider } from '@/components/ui/Divider';
+import { SparkleDivider } from '@/components/motion/SparkleDivider';
 import { Section } from '@/components/ui/Section';
-import { Reveal } from '@/components/ui/Reveal';
+import { Reveal } from '@/components/motion/Reveal';
 import { siteContent } from '@/content/siteContent';
 
 export const metadata: Metadata = {
@@ -56,14 +56,14 @@ export default function HowWeHelpPage() {
         <Reveal>
           <Card className="space-y-3">
             <h3 className="text-2xl">{impact.title}</h3>
-            <Divider />
+            <SparkleDivider />
             <p className="text-sm text-night-800">{impact.body}</p>
           </Card>
         </Reveal>
         <Reveal delay={0.1}>
           <Card className="space-y-3">
             <h3 className="text-2xl">{safety.title}</h3>
-            <Divider />
+            <SparkleDivider />
             <p className="text-sm text-night-800">{safety.body}</p>
           </Card>
         </Reveal>

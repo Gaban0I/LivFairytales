@@ -1,8 +1,8 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
-import { Reveal } from '@/components/ui/Reveal';
+import { Reveal } from '@/components/motion/Reveal';
 import { siteContent } from '@/content/siteContent';
 
 export const metadata: Metadata = {

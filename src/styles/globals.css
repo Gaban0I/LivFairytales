@@ -22,25 +22,6 @@
 }
 
 @layer components {
-  .sparkle-divider {
-    position: relative;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(211, 166, 50, 0.6), transparent);
-  }
-
-  .sparkle-divider::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    background: rgba(211, 166, 50, 0.8);
-    box-shadow: 0 0 12px rgba(211, 166, 50, 0.7);
-  }
-
   .bg-stars {
     background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.35) 1px, transparent 0);
     background-size: 20px 20px;
@@ -48,5 +29,115 @@
 
   .font-accent {
     font-family: var(--font-accent), Georgia, serif;
+  }
+
+  .magic-button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .magic-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.6), transparent 60%);
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  .magic-button:hover::after {
+    animation: shimmer 1.2s ease-out forwards;
+    opacity: 1;
+  }
+
+  .magic-button--reduced::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .sparkle-overlay {
+    background-image: radial-gradient(circle at 12px 10px, rgba(255, 255, 255, 0.4) 1px, transparent 0),
+      radial-gradient(circle at 32px 24px, rgba(255, 255, 255, 0.35) 1px, transparent 0),
+      radial-gradient(circle at 52px 12px, rgba(255, 255, 255, 0.25) 1px, transparent 0);
+    background-size: 60px 40px;
+  }
+
+  .sparkle-burst {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    opacity: 0;
+  }
+
+  .magic-button:hover .sparkle-burst {
+    animation: sparkle-pop 0.8s ease-out forwards;
+  }
+
+  .sparkle-burst-1 {
+    top: 20%;
+    left: 12%;
+  }
+
+  .sparkle-burst-2 {
+    top: 15%;
+    right: 18%;
+  }
+
+  .sparkle-burst-3 {
+    bottom: 18%;
+    left: 18%;
+  }
+
+  .sparkle-burst-4 {
+    bottom: 15%;
+    right: 20%;
+  }
+
+  .sparkle-burst-5 {
+    top: 45%;
+    right: 42%;
+  }
+
+  .sparkle-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(211, 166, 50, 0.6), transparent);
+  }
+
+  .sparkle-divider__icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: inline-flex;
+    transform: translate(-50%, -50%);
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 999px;
+    box-shadow: 0 0 10px rgba(211, 166, 50, 0.5);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes sparkle-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
   }
 }

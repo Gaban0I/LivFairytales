@@ -1,11 +1,11 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { Divider } from '@/components/ui/Divider';
+import { SparkleDivider } from '@/components/motion/SparkleDivider';
 import { Section } from '@/components/ui/Section';
-import { Reveal } from '@/components/ui/Reveal';
+import { Reveal } from '@/components/motion/Reveal';
 import { siteContent } from '@/content/siteContent';
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function AboutPage() {
       <Section className="space-y-8">
         <Reveal className="space-y-3">
           <h2 className="text-3xl sm:text-4xl">{timelineTitle}</h2>
-          <Divider />
+          <SparkleDivider />
         </Reveal>
         <div className="grid gap-6 lg:grid-cols-3">
           {timeline.map((item, index) => (
