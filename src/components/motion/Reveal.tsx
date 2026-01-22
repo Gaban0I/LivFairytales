@@ -21,7 +21,7 @@ export function Reveal({
   delay = 0,
   once = true,
 }: RevealProps) {
-  const reduceMotion = usePrefersReducedMotion();
+  const reduceMotion = usePrefersReducedMotion() ?? false;
   const variants = createRevealVariants(reduceMotion)[variant];
 
   return (

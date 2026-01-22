@@ -21,7 +21,7 @@ export function Stagger({
   stagger = 0.1,
   once = true,
 }: StaggerProps) {
-  const reduceMotion = usePrefersReducedMotion();
+  const reduceMotion = usePrefersReducedMotion() ?? false;
 
   return (
     <motion.div
@@ -57,7 +57,7 @@ export function StaggerItem({
   variant = 'fadeUp',
   hoverLift = false,
 }: StaggerItemProps) {
-  const reduceMotion = usePrefersReducedMotion();
+  const reduceMotion = usePrefersReducedMotion() ?? false;
   const variants = createRevealVariants(reduceMotion)[variant];
 
   return (

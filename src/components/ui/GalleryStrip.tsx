@@ -16,7 +16,7 @@ type GalleryStripProps = {
 };
 
 export function GalleryStrip({ title, images, viewMoreLabel, viewMoreHref }: GalleryStripProps) {
-  const reduceMotion = usePrefersReducedMotion();
+  const reduceMotion = usePrefersReducedMotion() ?? false;
 
   return (
     <Section className="space-y-8">

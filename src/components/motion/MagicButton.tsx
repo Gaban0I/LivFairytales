@@ -10,7 +10,7 @@ import { usePrefersReducedMotion } from './usePrefersReducedMotion';
 type MagicButtonProps = ComponentProps<typeof Button>;
 
 export function MagicButton({ className = '', children, ...props }: MagicButtonProps) {
-  const reduceMotion = usePrefersReducedMotion();
+  const reduceMotion = usePrefersReducedMotion() ?? false;
 
   return (
     <motion.div
