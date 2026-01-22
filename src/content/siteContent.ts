@@ -536,7 +536,7 @@ export const siteContent: SiteContent = {
         {
           name: 'Olivia Guzniczak',
           role: 'Fondatrice',
-          bio: 'Diabetique de type 1 et aide soignante en formation, elle a fonde Liv Fairytales pour offrir du reve aux patients.',
+          bio: 'Diabetique de type 1 et aide soignante en formation, elle a fondé Liv Fairytales pour offrir du reve aux patients.',
           image: { src: '/images/team-1.jpg', alt: 'Olivia Guzniczak' },
         },
         {
