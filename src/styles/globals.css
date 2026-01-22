@@ -104,6 +104,8 @@
     position: relative;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(211, 166, 50, 0.6), transparent);
+    display: flex;
+    align-items: center;
   }
 
   .sparkle-divider__icon {
@@ -116,6 +118,11 @@
     background: rgba(255, 255, 255, 0.8);
     border-radius: 999px;
     box-shadow: 0 0 10px rgba(211, 166, 50, 0.5);
+    line-height: 0;
+  }
+
+  .sparkle-divider__icon svg {
+    display: block;
   }
 }
 
