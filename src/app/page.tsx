@@ -27,17 +27,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={hero.backgroundImage.src}
-            alt={hero.backgroundImage.alt}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
-        </div>
+      <section className="relative">
         <Section className="relative z-10 grid gap-10 py-24 lg:grid-cols-[1.1fr_0.9fr]">
           <Stagger className="space-y-6">
             <StaggerItem>
@@ -85,7 +75,13 @@ export default function HomePage() {
 
       <Section className="grid items-center gap-10 lg:grid-cols-2">
         <Reveal className="relative h-72 overflow-hidden rounded-3xl border border-white/70 shadow-magic sm:h-96" variant="slideLeft">
-          <Image src={story.image.src} alt={story.image.alt} fill className="object-cover" />
+          <Image
+            src={story.image.src}
+            alt={story.image.alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </Reveal>
         <Reveal className="space-y-6" variant="slideRight" delay={0.05}>
           <h2 className="text-3xl sm:text-4xl">{story.title}</h2>
@@ -152,12 +148,8 @@ export default function HomePage() {
         </Reveal>
       </Section>
 
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src={finalGallery.image.src} alt={finalGallery.image.alt} fill className="object-cover" />
-          <div className="absolute inset-0 bg-night-900/50" />
-        </div>
-        <Section className="relative z-10 space-y-6 text-white">
+      <section className="relative">
+        <Section className="relative z-10 space-y-6 text-night-900">
           <Reveal className="space-y-6" variant="fadeUp">
             <h2 className="text-3xl sm:text-4xl">{finalGallery.headline}</h2>
             <MagicButton href={finalGallery.buttonHref}>{finalGallery.buttonLabel}</MagicButton>

@@ -6,7 +6,6 @@ export type SiteNavItem = {
 
 export type SiteContent = {
   brandName: string;
-  logo: { src: string; alt: string };
   labels: {
     openMenu: string;
     closeMenu: string;
@@ -103,13 +102,20 @@ export type SiteContent = {
       title: string;
       subtitle: string;
     };
-    cards: {
+    sections: {
       title: string;
-      description: string;
-      ctaLabel: string;
-      ctaHref: string;
-      image: { src: string; alt: string };
+      subtitle?: string;
+      cards: {
+        title: string;
+        description: string;
+        details?: string[];
+        ctaLabel: string;
+        ctaHref: string;
+        image: { src: string; alt: string };
+      }[];
     }[];
+    notesTitle: string;
+    notes: string[];
     gallery: {
       title: string;
       viewMoreLabel: string;
@@ -232,11 +238,7 @@ export type SiteContent = {
 };
 
 export const siteContent: SiteContent = {
-  brandName: 'Liv Fairytales',
-  logo: {
-    src: '/images/placeholder-logo.png',
-    alt: 'Logo Liv Fairytales',
-  },
+  brandName: 'LivFairytales',
   labels: {
     openMenu: 'Menu',
     closeMenu: 'Fermer',
@@ -250,9 +252,9 @@ export const siteContent: SiteContent = {
     poweredBy: 'Gabriel Le Goat',
   },
   socialLinks: [
-    { label: 'TikTok', href: 'https://tiktok.com' },
-    { label: 'Instagram', href: 'https://instagram.com' },
-    { label: 'Facebook', href: 'https://facebook.com' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@livfairytales?_r=1&_t=ZN-93ZLqw5BBuY' },
+    { label: 'Instagram', href: 'https://www.instagram.com/livfairytales?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
+    { label: 'Facebook', href: 'https://www.facebook.com/share/1JD2oxP75g/?mibextid=wwXIfr' },
   ],
   navigation: {
     primary: [
@@ -356,7 +358,7 @@ export const siteContent: SiteContent = {
       title: 'Une mission née du cœur et du vécu',
       body:
         "Créée par Olivia Guzniczak, Liv Fairytales est née d'une expérience personnelle du milieu hospitalier et d'une passion pour le cosplay et l'aide aux autres.",
-      image: { src: '/images/placeholder-story.png', alt: 'Fondatrice de Liv Fairytales' },
+      image: { src: '/images/notre-histoire.jpg', alt: 'Fondatrice de Liv Fairytales' },
       ctaLabel: 'Notre histoire',
       ctaHref: '/about',
     },
@@ -376,13 +378,12 @@ export const siteContent: SiteContent = {
     },
     donate: {
       title: 'Soutenir nos actions',
-      body:
-        'Vos dons financent costumes, cadeaux, matériel créatif et déplacements pour des visites gratuites.',
+      body: 'Vos dons financent costumes, cadeaux, matériel créatif et déplacements pour des visites gratuites.',
       ctaLabel: 'Faire un don',
       ctaHref: 'mailto:livfairytales@gmail.com',
     },
     event: {
-      title: 'Des rencontres\nqui laissent une trace',
+      title: 'Des rencontres\\nqui laissent une trace',
       body:
         'Nous intervenons selon les disponibilités des bénévoles et adaptons chaque visite aux besoins médicaux et émotionnels.',
       ctaLabel: 'Contactez-nous',
@@ -390,7 +391,7 @@ export const siteContent: SiteContent = {
     },
     eventCard: {
       title: 'Ce que nous offrons',
-      body: "Chaque visite est unique et co-construite avec les équipes ou les familles.",
+      body: 'Chaque visite est unique et co-construite avec les équipes ou les familles.',
       items: ['Entrée en musique si possible', 'Lecture et activités créatives', 'Photos souvenir et autographes'],
     },
     finalGallery: {
@@ -404,41 +405,124 @@ export const siteContent: SiteContent = {
     intro: {
       title: 'Choisissez la formule adaptée',
       subtitle:
-        "Toutes les visites sont gratuites. Les disponibilités dépendent de nos bénévoles et un délai d'attente peut être nécessaire.",
+        'Formules enfants et adultes, toutes gratuites et bénévoles. Choisissez la formule adaptée et envoyez votre demande.',
     },
-    cards: [
+    sections: [
       {
-        title: 'Visite hôpital 1h',
-        description:
-          'Jusqu à 2 personnages. Entrée en musique si possible, lecture, cadeau de coloriage, photo polaroid et autographe.',
-        ctaLabel: 'Faire une demande',
-        ctaHref: 'mailto:livfairytales@gmail.com',
-        image: { src: '/images/placeholder-book-1.png', alt: 'Visite hôpital' },
+        title: 'Formules enfants',
+        subtitle:
+          "Visites en hôpital, à domicile ou en visio. Toutes les activités sont adaptées à l'état de santé, au rythme et aux capacités de l'enfant.",
+        cards: [
+          {
+            title: "Visite à l'hôpital — 1h",
+            description: 'Formule enfants.',
+            details: [
+              'Entrée en musique (si les conditions médicales et hospitalières le permettent).',
+              "Remise d'un cadeau à l'enfant (livre de coloriage à l'effigie du personnage choisi).",
+              "Lecture de l'histoire du personnage.",
+              'Photo Polaroid avec autographe du personnage.',
+            ],
+            ctaLabel: 'Faire une demande',
+            ctaHref:
+              'https://docs.google.com/forms/d/e/1FAIpQLSdjov7QDluhqzSWlHa7bA9ku_23pFKbAW-IcnZC2yzC0H5P4g/viewform',
+            image: { src: '/images/placeholder-book-1.png', alt: 'Visite hôpital enfants' },
+          },
+          {
+            title: 'Visite à domicile — 1h30',
+            description: 'Maximum 7 enfants présents — sans ACC.',
+            details: [
+              'Entrée en musique (si les conditions le permettent).',
+              "Remise d'un cadeau à l'enfant (livre de coloriage à l'effigie du personnage choisi).",
+              "Activité manuelle avec l'enfant et ses amis.",
+              "Lecture de l'histoire du personnage.",
+              "Danses si l'état médical de l'enfant le permet (sinon, petit spectacle adapté).",
+              'Photo Polaroid avec autographe du personnage.',
+            ],
+            ctaLabel: 'Faire une demande',
+            ctaHref:
+              'https://docs.google.com/forms/d/e/1FAIpQLSdjov7QDluhqzSWlHa7bA9ku_23pFKbAW-IcnZC2yzC0H5P4g/viewform',
+            image: { src: '/images/placeholder-book-2.png', alt: 'Visite domicile enfants' },
+          },
+          {
+            title: 'Visite à domicile — 2h',
+            description: 'Maximum 15 enfants présents — avec ACC.',
+            details: [
+              'Entrée en musique (si les conditions le permettent).',
+              "Remise d'un cadeau à l'enfant (livre de coloriage à l'effigie du personnage choisi).",
+              "Activité manuelle avec l'enfant et ses amis.",
+              "Lecture de l'histoire du personnage.",
+              "Danses si l'état médical de l'enfant le permet (sinon, petit spectacle musical adapté).",
+              "Couronnement symbolique de l'enfant malade.",
+              'Photo Polaroid avec autographe du personnage.',
+              'Encadrement du goûter, si celui-ci est prévu.',
+            ],
+            ctaLabel: 'Faire une demande',
+            ctaHref:
+              'https://docs.google.com/forms/d/e/1FAIpQLSdjov7QDluhqzSWlHa7bA9ku_23pFKbAW-IcnZC2yzC0H5P4g/viewform',
+            image: { src: '/images/placeholder-book-3.png', alt: 'Visite domicile enfants avec ACC' },
+          },
+          {
+            title: 'Formule Visio Magique — 30/45 minutes',
+            description: "Présence obligatoire d'un parent ou représentant légal.",
+            details: [
+              'Arrivée du personnage en visio, avec salutation personnalisée.',
+              "Petit moment d'échange adapté à l'âge et à l'état de l'enfant.",
+              "Lecture d'une histoire ou conte du personnage choisi.",
+              'Mini animation interactive (questions, quizz, devinettes).',
+              "Message d'encouragement et au revoir féerique.",
+              "Lien privé avec mot de passe et salle d'attente.",
+              'Aucune captation ou enregistrement sans autorisation écrite.',
+              "La visio est adaptée au rythme de l'enfant et peut être écourtée si nécessaire.",
+            ],
+            ctaLabel: 'Faire une demande',
+            ctaHref:
+              'https://docs.google.com/forms/d/e/1FAIpQLSdjov7QDluhqzSWlHa7bA9ku_23pFKbAW-IcnZC2yzC0H5P4g/viewform',
+            image: { src: '/images/placeholder-book-4.png', alt: 'Visio magique' },
+          },
+        ],
       },
       {
-        title: 'Visite domicile 1h30',
-        description:
-          'Jusqu à 7 enfants, 2 personnages. Activité manuelle, lecture, danse ou mini-spectacle, photo et autographe.',
-        ctaLabel: 'Faire une demande',
-        ctaHref: 'mailto:livfairytales@gmail.com',
-        image: { src: '/images/placeholder-book-2.png', alt: 'Visite domicile' },
+        title: 'Formules adultes',
+        subtitle:
+          'Adaptées pour MAS, EHPAD ou services psychiatriques adolescents. Les activités sont pensées pour le confort, le rythme et les capacités des participants.',
+        cards: [
+          {
+            title: 'Visite en hôpital ou structure — 30 à 45 minutes',
+            description: 'Avec ACC.',
+            details: [
+              'Entrée en musique (si les conditions le permettent).',
+              'Activité manuelle adaptée aux capacités des participants.',
+              'Photo Polaroid avec autographe du personnage.',
+            ],
+            ctaLabel: 'Faire une demande',
+            ctaHref:
+              'https://docs.google.com/forms/d/e/1FAIpQLSenfCekTVuCXgPSP99U4a_zjwekLxVTNBghZRI4sbXynaTIqA/viewform',
+            image: { src: '/images/placeholder-how-1.png', alt: 'Visite adultes en structure' },
+          },
+          {
+            title: 'Visite “Bal” en EHPAD — 2h30',
+            description: 'Avec ACC.',
+            details: [
+              'Entrée en musique (si les conditions le permettent).',
+              'Chants et karaoké avec le personnage.',
+              'Activités manuelles adaptées aux résidents.',
+              "Temps d'échange avec les résidents et leurs familles.",
+              'La visite reste adaptable selon l’organisation et les envies de la structure.',
+            ],
+            ctaLabel: 'Faire une demande',
+            ctaHref:
+              'https://docs.google.com/forms/d/e/1FAIpQLSenfCekTVuCXgPSP99U4a_zjwekLxVTNBghZRI4sbXynaTIqA/viewform',
+            image: { src: '/images/placeholder-how-2.png', alt: 'Bal en EHPAD' },
+          },
+        ],
       },
-      {
-        title: 'Visite domicile 2h avec ACC',
-        description:
-          'Jusqu à 15 enfants, 3 personnages. Couronnement, encadrement du goûter si prévu, activités et photo souvenir.',
-        ctaLabel: 'Faire une demande',
-        ctaHref: 'mailto:livfairytales@gmail.com',
-        image: { src: '/images/placeholder-book-3.png', alt: 'Visite domicile avec ACC' },
-      },
-      {
-        title: 'Formules adultes et EHPAD',
-        description:
-          "Interventions adaptées pour MAS, EHPAD ou psychiatrie ado. Chants, karaoké, activités manuelles et temps d'échange.",
-        ctaLabel: 'Faire une demande',
-        ctaHref: 'mailto:livfairytales@gmail.com',
-        image: { src: '/images/placeholder-book-4.png', alt: 'Visites adultes' },
-      },
+    ],
+    notesTitle: 'à savoir',
+    notes: [
+      "Le terme « formule » n'implique aucun paiement : toutes nos visites sont gratuites et bénévoles.",
+      'Les interventions dépendent des disponibilités de nos bénévoles ; le jour exact ne peut pas toujours être garanti.',
+      "Selon le planning, un délai d'attente peut être nécessaire avant la réalisation de certaines visites.",
+      'Vous êtes une structure médicale ou une association à but non lucratif ? Contactez-nous par mail pour organiser une visite 100% adaptée à vos besoins.',
     ],
     gallery: {
       title: 'Nous combattons avec la magie',
@@ -453,6 +537,7 @@ export const siteContent: SiteContent = {
       ],
     },
   },
+
   howWeHelp: {
     hero: {
       title: 'Des visites adaptées à chaque situation',
@@ -465,13 +550,13 @@ export const siteContent: SiteContent = {
       {
         title: 'Formules enfants',
         body:
-          "Entrées en musique, lecture d'histoires, activités manuelles, cadeaux et photos polaroid avec autographe.",
+          "Visites à l’hôpital (1h), à domicile (1h30 sans ACC / 2h avec ACC) ou en visio (30/45 min). Entrée en musique, cadeaux, lecture, activités et polaroid selon l’état de l’enfant.",
         image: { src: '/images/placeholder-how-1.png', alt: 'Formules enfants' },
       },
       {
         title: 'Formules adultes et EHPAD',
         body:
-          "Visites adaptées, chants et karaoké, activités créatives et temps d'échange avec les résidents et familles.",
+          "Formules adaptées pour MAS, EHPAD ou services psychiatriques adolescents : visite en structure 30 à 45 min (avec ACC) ou Bal en EHPAD 2h30 (avec ACC), activités et échanges modulés selon les résidents.",
         image: { src: '/images/placeholder-how-2.png', alt: 'Formules adultes' },
       },
       {
@@ -505,7 +590,7 @@ export const siteContent: SiteContent = {
       title: 'Notre histoire',
       subtitle:
         "Liv Fairytales est une association née d'une double passion pour la santé et le cosplay, fondée par Olivia Guzniczak.",
-      image: { src: '/images/placeholder-about-hero.png', alt: 'Notre histoire' },
+      image: { src: '/images/notre-histoire.jpg', alt: 'Notre histoire' },
       ctaLabel: 'Nous contacter',
     },
     timelineTitle: 'Les grandes étapes',

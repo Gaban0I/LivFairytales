@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default function BookPage() {
-  const { intro, cards, gallery } = siteContent.book;
+  const { intro, sections, notesTitle, notes, gallery } = siteContent.book;
 
   return (
     <div>
@@ -31,24 +31,58 @@ export default function BookPage() {
         </Reveal>
       </Section>
 
-      <Section>
-        <Stagger className="grid gap-6 md:grid-cols-2" stagger={0.1}>
-          {cards.map((card) => (
-            <StaggerItem key={card.title} variant="scaleIn" hoverLift>
-              <Card className="space-y-4">
-                <div className="relative h-48 overflow-hidden rounded-2xl">
-                  <Image src={card.image.src} alt={card.image.alt} fill className="object-cover" />
-                </div>
-                <div className="space-y-2">
-                  <h2 className="text-2xl">{card.title}</h2>
-                  <p className="text-sm text-night-800">{card.description}</p>
-                </div>
-                <MagicButton href={card.ctaHref}>{card.ctaLabel}</MagicButton>
-              </Card>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </Section>
+      {sections.map((section) => (
+        <Section key={section.title} className="space-y-6">
+          <Reveal className="space-y-3">
+            <h2 className="text-3xl sm:text-4xl">{section.title}</h2>
+            {section.subtitle ? <p className="text-sm text-night-800">{section.subtitle}</p> : null}
+          </Reveal>
+          <Stagger className="grid gap-6 md:grid-cols-2" stagger={0.1}>
+            {section.cards.map((card) => (
+              <StaggerItem key={card.title} variant="scaleIn" hoverLift>
+                <Card className="space-y-4">
+                  <div className="relative h-48 overflow-hidden rounded-2xl">
+                    <Image
+                      src={card.image.src}
+                      alt={card.image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-2xl">{card.title}</h3>
+                    {card.description ? <p className="text-sm text-night-800">{card.description}</p> : null}
+                    {card.details && card.details.length > 0 ? (
+                      <ul className="list-disc space-y-1 pl-5 text-sm text-night-800">
+                        {card.details.map((detail) => (
+                          <li key={detail}>{detail}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                  <MagicButton href={card.ctaHref}>{card.ctaLabel}</MagicButton>
+                </Card>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </Section>
+      ))}
+
+      {notes && notes.length > 0 ? (
+        <Section>
+          <Reveal>
+            <Card className="space-y-3">
+              <h2 className="text-2xl">{notesTitle}</h2>
+              <ul className="list-disc space-y-2 pl-5 text-sm text-night-800">
+                {notes.map((note) => (
+                  <li key={note}>{note}</li>
+                ))}
+              </ul>
+            </Card>
+          </Reveal>
+        </Section>
+      ) : null}
 
       <Reveal>
         <GalleryStrip

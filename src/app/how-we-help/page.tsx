@@ -31,7 +31,13 @@ export default function HowWeHelpPage() {
           <Button href="/book">{hero.ctaLabel}</Button>
         </Reveal>
         <Reveal className="relative h-72 overflow-hidden rounded-3xl border border-white/70 shadow-magic sm:h-96" delay={0.1}>
-          <Image src={hero.image.src} alt={hero.image.alt} fill className="object-cover" />
+          <Image
+            src={hero.image.src}
+            alt={hero.image.alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </Reveal>
       </Section>
 
@@ -43,7 +49,13 @@ export default function HowWeHelpPage() {
           <Reveal
             className={`relative h-64 overflow-hidden rounded-3xl border border-white/70 shadow-magic sm:h-80 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}
           >
-            <Image src={section.image.src} alt={section.image.alt} fill className="object-cover" />
+            <Image
+              src={section.image.src}
+              alt={section.image.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </Reveal>
           <Reveal className="space-y-4" delay={0.1}>
             <h2 className="text-3xl sm:text-4xl">{section.title}</h2>

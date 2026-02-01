@@ -31,7 +31,13 @@ export default function AboutPage() {
           <Button href="/contact">{hero.ctaLabel}</Button>
         </Reveal>
         <Reveal className="relative h-72 overflow-hidden rounded-3xl border border-white/70 shadow-magic sm:h-96" delay={0.1}>
-          <Image src={hero.image.src} alt={hero.image.alt} fill className="object-cover" />
+          <Image
+            src={hero.image.src}
+            alt={hero.image.alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </Reveal>
       </Section>
 
@@ -62,7 +68,13 @@ export default function AboutPage() {
             <Reveal key={member.name} delay={index * 0.08}>
               <Card className="space-y-4">
                 <div className="relative h-48 overflow-hidden rounded-2xl">
-                  <Image src={member.image.src} alt={member.image.alt} fill className="object-cover" />
+                  <Image
+                    src={member.image.src}
+                    alt={member.image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
                 <div>
                   <h3 className="text-lg">{member.name}</h3>

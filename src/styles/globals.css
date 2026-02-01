@@ -1,7 +1,15 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Bright Marching';
+  src:
+    url('/fonts/BrightMarching-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   color-scheme: only light;
 }
@@ -12,7 +20,8 @@
   }
 
   body {
-    @apply bg-soft-gradient text-night-900 font-sans antialiased;
+    @apply text-night-900 font-sans antialiased;
+    background-color: #FAE6E7;
     min-height: 100vh;
   }
 
@@ -147,4 +156,26 @@
     transform: scale(1.6);
     opacity: 0;
   }
+}
+
+/* Scrollbar: keep it minimal and transparent on the track */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d6a3ad transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d6a3ad;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
 }

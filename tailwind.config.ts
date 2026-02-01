@@ -47,6 +47,7 @@ const config: Config = {
       fontFamily: {
         title: ['var(--font-title)', 'Georgia', 'serif'],
         accent: ['var(--font-accent)', 'Georgia', 'serif'],
+        brand: ['"Bright Marching"', 'var(--font-title)', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
@@ -59,7 +60,8 @@ const config: Config = {
         glow: '0 0 25px rgba(211, 166, 50, 0.25)',
       },
       backgroundImage: {
-        'soft-gradient': 'linear-gradient(135deg, rgba(253,242,247,0.9) 0%, rgba(235,231,248,0.9) 50%, rgba(230,242,251,0.9) 100%)',
+        'soft-gradient':
+          'linear-gradient(135deg, #FAE6E7 0%, rgba(250,230,231,0.92) 55%, rgba(235,231,248,0.88) 100%)',
       },
     },
   },

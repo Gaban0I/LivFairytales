@@ -7,6 +7,8 @@ import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 import { siteContent } from '@/content/siteContent';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com';
+
 const titleFont = Cinzel_Decorative({
   subsets: ['latin'],
   variable: '--font-title',
@@ -30,6 +32,7 @@ const bodyFont = Montserrat({
 export const metadata: Metadata = {
   title: siteContent.metadata.home.title,
   description: siteContent.metadata.home.description,
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: siteContent.metadata.home.title,
     description: siteContent.metadata.home.description,
@@ -39,8 +42,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${titleFont.variable} ${accentFont.variable} ${bodyFont.variable}`}>
-      <body className="bg-stars">
+    <html lang="fr" className={`${titleFont.variable} ${accentFont.variable} ${bodyFont.variable}`}>
+      <body>
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>
