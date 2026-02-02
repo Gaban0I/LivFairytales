@@ -2,7 +2,7 @@
 import type { ComponentProps } from 'react';
 
 const baseStyles =
-  'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200 focus-visible:ring-2 transform-gpu hover:scale-[1.02]';
+  'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200 focus-visible:ring-2 transform-gpu hover:scale-[1.01]';
 
 const variants = {
   primary:

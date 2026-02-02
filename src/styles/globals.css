@@ -15,6 +15,10 @@
   --sparkle-opacity: 0.6;
   --sparkle-opacity-strong: 0.85;
   --sparkle-shimmer-opacity: 0.5;
+  --motif-opacity: 0.03;
+  --aura-rose: 250, 214, 231;
+  --aura-lavender: 150, 127, 213;
+  --aura-gold: 211, 166, 50;
 }
 
 @layer base {
@@ -44,7 +48,7 @@ body.sparkle-bg::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   background-repeat: repeat;
   background-blend-mode: screen;
 }
@@ -67,6 +71,21 @@ body.sparkle-bg::after {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,1%2020,12%2031,16%2020,20%2016,31%2012,20%201,16%2012,12' fill='rgba(255,255,255,0.65)'/%3E%3C/svg%3E");
   background-size: 16px 16px, 21px 21px;
   animation: sparkle-twinkle 14s ease-in-out infinite 1.5s, sparkle-drift-large 70s linear infinite;
+}
+
+body.no-sparkle::before,
+body.no-sparkle::after {
+  opacity: 0;
+  animation: none;
+}
+
+body.reduce-motion::before,
+body.reduce-motion::after {
+  animation: none;
+}
+
+body.no-sparkle .sparkle-boost::before {
+  opacity: 0;
 }
 
 @keyframes sparkle-twinkle {
@@ -112,6 +131,47 @@ body.sparkle-bg::after {
   }
 }
 
+/* Subtle magical motif layer */
+.magic-motif {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--motif-opacity);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M20 56l6-20 14 10 14-10 6 20-20-12-20 12z' fill='rgba(255,255,255,0.8)'/%3E%3Ccircle cx='20' cy='28' r='3' fill='rgba(255,255,255,0.8)'/%3E%3Ccircle cx='60' cy='28' r='3' fill='rgba(255,255,255,0.8)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M18 20l16 6 6 16 6-16 16-6-16-6-6-16-6 16-16 6z' fill='rgba(255,255,255,0.8)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M12 62l36-36 6 6-36 36-6-6zm34-44l10-6 6 10-10 6-6-10z' fill='rgba(255,255,255,0.8)'/%3E%3C/svg%3E");
+  background-size: 320px 320px, 360px 360px, 420px 420px;
+  background-repeat: repeat;
+  mix-blend-mode: soft-light;
+  animation: motif-drift 90s linear infinite;
+}
+
+body.no-motif .magic-motif {
+  opacity: 0;
+  animation: none;
+}
+
+body.reduce-motion .magic-motif {
+  animation: none;
+}
+
+@keyframes motif-drift {
+  0% {
+    background-position: 0 0, 40px -20px, -30px 10px;
+  }
+  100% {
+    background-position: 120px -80px, -60px 90px, 80px -60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magic-motif {
+    animation: none;
+  }
+}
+
 /* Optional: boost sparkle locally (ex: hero) */
 .sparkle-boost {
   position: relative;
@@ -129,6 +189,127 @@ body.sparkle-bg::after {
     radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
     radial-gradient(circle at 50% 75%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px);
   background-size: 240px 240px, 280px 280px, 260px 260px;
+}
+
+/* Magic aura utility */
+.magic-aura {
+  position: relative;
+  display: inline-block;
+  --aura-opacity: 0;
+  --aura-alpha: 0.3;
+  --aura-blur: 28px;
+  --aura-spread: 12px;
+  --aura-color: var(--aura-rose);
+}
+
+.magic-aura::before {
+  content: '';
+  position: absolute;
+  inset: calc(-1 * var(--aura-spread));
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(var(--aura-color), var(--aura-alpha)) 0%, rgba(var(--aura-color), 0) 70%);
+  opacity: var(--aura-opacity);
+  filter: blur(var(--aura-blur));
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: screen;
+}
+
+.magic-aura--hover:hover::before {
+  opacity: 1;
+}
+
+.magic-aura--soft {
+  --aura-alpha: 0.22;
+  --aura-blur: 24px;
+  --aura-spread: 10px;
+}
+
+.magic-aura--medium {
+  --aura-alpha: 0.32;
+  --aura-blur: 30px;
+  --aura-spread: 14px;
+}
+
+.magic-aura--strong {
+  --aura-alpha: 0.4;
+  --aura-blur: 36px;
+  --aura-spread: 18px;
+}
+
+.magic-aura--rose {
+  --aura-color: var(--aura-rose);
+}
+
+.magic-aura--lavender {
+  --aura-color: var(--aura-lavender);
+}
+
+.magic-aura--gold {
+  --aura-color: var(--aura-gold);
+}
+
+.magic-aura--reduced::before {
+  transition: none;
+  opacity: 0.6;
+}
+
+body.no-aura .magic-aura::before {
+  opacity: 0 !important;
+}
+
+body.reduce-motion .magic-aura::before {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magic-aura::before {
+    transition: none;
+  }
+}
+
+/* Subtle typography magic */
+.magic-title {
+  letter-spacing: 0.02em;
+  background-image: linear-gradient(90deg, #1b1723 0%, #6b546f 50%, #1b1723 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.magic-dropcap::first-letter {
+  float: left;
+  font-family: var(--font-title), Georgia, serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  padding-right: 0.35rem;
+  color: #b68a1c;
+}
+
+.magic-breathe {
+  will-change: transform;
+  transform-origin: center;
+  animation: magic-breathe 26s ease-in-out infinite;
+}
+
+body.reduce-motion .magic-breathe {
+  animation: none;
+}
+
+@keyframes magic-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magic-breathe {
+    animation: none;
+  }
 }
 
 @layer components {
@@ -257,6 +438,17 @@ body.sparkle-bg::after {
     transform: scale(1.6);
     opacity: 0;
   }
+}
+
+body.reduce-motion .magic-button::after,
+body.reduce-motion .magic-button:hover::after {
+  animation: none;
+  opacity: 0;
+}
+
+body.reduce-motion .sparkle-burst {
+  animation: none;
+  opacity: 0;
 }
 
 /* Scrollbar: keep it minimal and transparent on the track */

@@ -23,6 +23,10 @@ export function Stagger({
 }: StaggerProps) {
   const reduceMotion = usePrefersReducedMotion() ?? false;
 
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
@@ -60,11 +64,15 @@ export function StaggerItem({
   const reduceMotion = usePrefersReducedMotion() ?? false;
   const variants = createRevealVariants(reduceMotion)[variant];
 
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
       variants={variants}
-      transition={{ duration: reduceMotion ? 0.2 : 0.6, ease: 'easeOut' }}
+      transition={{ duration: reduceMotion ? 0.2 : 0.7, ease: 'easeOut' }}
       whileHover={hoverLift && !reduceMotion ? { y: -4 } : undefined}
     >
       {children}

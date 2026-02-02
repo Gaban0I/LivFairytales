@@ -222,6 +222,7 @@ export type SiteContent = {
     merch: { title: string; body: string };
     partnerships: { title: string; body: string };
     resources: { title: string; body: string };
+    accessibility: { title: string; body: string };
   };
   notFound: {
     title: string;
@@ -276,6 +277,7 @@ export const siteContent: SiteContent = {
           { label: 'Merch', href: '/extras/merch' },
           { label: 'Partenariats', href: '/extras/partnerships' },
           { label: 'Ressources', href: '/extras/resources' },
+          { label: 'Accessibilité', href: '/extras/accessibility' },
         ],
       },
     ],
@@ -744,6 +746,10 @@ export const siteContent: SiteContent = {
       title: 'Ressources',
       body: 'Documents et informations pour accompagner vos demandes.',
     },
+    accessibility: {
+      title: 'Accessibilité',
+      body: 'Adaptez les effets visuels et les animations pour un confort optimal.',
+    },
   },
   notFound: {
     title: 'Page introuvable',
@@ -784,6 +790,7 @@ export const siteContent: SiteContent = {
           { label: 'Merch', href: '/extras/merch' },
           { label: 'Partenariats', href: '/extras/partnerships' },
           { label: 'Ressources', href: '/extras/resources' },
+          { label: 'Accessibilité', href: '/extras/accessibility' },
         ],
       },
       {

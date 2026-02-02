@@ -24,6 +24,10 @@ export function Reveal({
   const reduceMotion = usePrefersReducedMotion() ?? false;
   const variants = createRevealVariants(reduceMotion)[variant];
 
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
@@ -31,7 +35,7 @@ export function Reveal({
       whileInView="show"
       viewport={{ once, amount: 0.25 }}
       variants={variants}
-      transition={{ duration: reduceMotion ? 0.2 : 0.65, ease: 'easeOut', delay }}
+      transition={{ duration: reduceMotion ? 0.2 : 0.7, ease: 'easeOut', delay }}
     >
       {children}
     </motion.div>
