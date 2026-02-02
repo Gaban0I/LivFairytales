@@ -431,7 +431,7 @@ export const siteContent: SiteContent = {
           },
           {
             title: 'Visite à domicile — 1h30',
-            description: 'Maximum 7 enfants présents — sans ACC.',
+            description: 'Maximum 7 enfants présents.',
             details: [
               'Entrée en musique (si les conditions le permettent).',
               "Remise d'un cadeau à l'enfant (livre de coloriage à l'effigie du personnage choisi).",
@@ -447,7 +447,7 @@ export const siteContent: SiteContent = {
           },
           {
             title: 'Visite à domicile — 2h',
-            description: 'Maximum 15 enfants présents — avec ACC.',
+            description: 'Maximum 15 enfants présents.',
             details: [
               'Entrée en musique (si les conditions le permettent).',
               "Remise d'un cadeau à l'enfant (livre de coloriage à l'effigie du personnage choisi).",
@@ -461,7 +461,7 @@ export const siteContent: SiteContent = {
             ctaLabel: 'Faire une demande',
             ctaHref:
               'https://docs.google.com/forms/d/e/1FAIpQLSdjov7QDluhqzSWlHa7bA9ku_23pFKbAW-IcnZC2yzC0H5P4g/viewform',
-            image: { src: '/images/placeholder-book-3.png', alt: 'Visite domicile enfants avec ACC' },
+            image: { src: '/images/placeholder-book-3.png', alt: 'Visite domicile enfants 2h' },
           },
           {
             title: 'Formule Visio Magique — 30/45 minutes',
@@ -552,13 +552,13 @@ export const siteContent: SiteContent = {
       {
         title: 'Formules enfants',
         body:
-          "Visites à l’hôpital (1h), à domicile (1h30 sans ACC / 2h avec ACC) ou en visio (30/45 min). Entrée en musique, cadeaux, lecture, activités et polaroid selon l’état de l’enfant.",
+          "Visites à l’hôpital (1h), à domicile (1h30 / 2h ) ou en visio (30/45 min). Entrée en musique, cadeaux, lecture, activités et polaroid selon l’état de l’enfant.",
         image: { src: '/images/placeholder-how-1.png', alt: 'Formules enfants' },
       },
       {
         title: 'Formules adultes et EHPAD',
         body:
-          "Formules adaptées pour MAS, EHPAD ou services psychiatriques adolescents : visite en structure 30 à 45 min (avec ACC) ou Bal en EHPAD 2h30 (avec ACC), activités et échanges modulés selon les résidents.",
+          "Formules adaptées pour MAS, EHPAD ou services psychiatriques adolescents : visite en structure 30 à 45 min ou Bal en EHPAD 2h30 , activités et échanges modulés selon les résidents.",
         image: { src: '/images/placeholder-how-2.png', alt: 'Formules adultes' },
       },
       {

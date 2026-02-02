@@ -42,7 +42,7 @@ function SettingRow({ label, description, checked, onChange, disabled = false }:
 }
 
 export function AccessibilitySettings() {
-  const systemReduce = useReducedMotion();
+  const systemReduce = useReducedMotion() ?? false;
   const [prefs, setPrefs] = useState<AccessibilityPrefs>(defaultPrefs);
 
   useEffect(() => {
