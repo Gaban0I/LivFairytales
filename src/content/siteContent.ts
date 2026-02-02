@@ -385,7 +385,7 @@ export const siteContent: SiteContent = {
       ctaHref: 'mailto:livfairytales@gmail.com',
     },
     event: {
-      title: 'Des rencontres\\nqui laissent une trace',
+      title: 'Des rencontres\nqui laissent une trace',
       body:
         'Nous intervenons selon les disponibilités des bénévoles et adaptons chaque visite aux besoins médicaux et émotionnels.',
       ctaLabel: 'Contactez-nous',

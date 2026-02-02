@@ -100,12 +100,6 @@ export function AccessibilitySettings() {
         checked={prefs.disableMotifs}
         onChange={(checked) => updatePrefs({ disableMotifs: checked })}
       />
-      <SettingRow
-        label="Désactiver les halos lumineux"
-        description="Supprime les auras et lueurs autour des éléments."
-        checked={prefs.disableAura}
-        onChange={(checked) => updatePrefs({ disableAura: checked })}
-      />
     </div>
   );
 }

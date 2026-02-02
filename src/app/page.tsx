@@ -7,7 +7,6 @@ import { Card } from '@/components/ui/Card';
 import { GalleryStrip } from '@/components/ui/GalleryStrip';
 import { Section } from '@/components/ui/Section';
 import { MagicButton } from '@/components/motion/MagicButton';
-import { MagicAura } from '@/components/magic/MagicAura';
 import { Reveal } from '@/components/motion/Reveal';
 import { SparkleDivider } from '@/components/motion/SparkleDivider';
 import { Stagger, StaggerItem } from '@/components/motion/Stagger';
@@ -35,20 +34,16 @@ export default function HomePage() {
               <Badge>{hero.badge}</Badge>
             </StaggerItem>
             <StaggerItem variant="fadeUp">
-              <MagicAura intensity="medium" colorVariant="lavender" trigger="view" className="block">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl">
-                  <span className="block magic-title">{hero.titleLine1}</span>
-                  <span className="block text-gold-400">{hero.titleLine2}</span>
-                </h1>
-              </MagicAura>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl">
+                <span className="block magic-title">{hero.titleLine1}</span>
+                <span className="block text-gold-400">{hero.titleLine2}</span>
+              </h1>
             </StaggerItem>
             <StaggerItem>
               <p className="max-w-xl text-base leading-relaxed text-night-800">{hero.subtitle}</p>
             </StaggerItem>
             <StaggerItem className="flex flex-wrap gap-4">
-              <MagicAura intensity="strong" colorVariant="gold" trigger="hover" className="inline-block">
-                <MagicButton href="/book">{hero.ctaLabel}</MagicButton>
-              </MagicAura>
+              <MagicButton href="/book">{hero.ctaLabel}</MagicButton>
               <Button variant="secondary" href="/support">
                 {hero.secondaryCtaLabel}
               </Button>
@@ -89,21 +84,15 @@ export default function HomePage() {
           />
         </Reveal>
         <Reveal className="space-y-6" variant="slideRight" delay={0.05}>
-          <MagicAura intensity="soft" colorVariant="rose" trigger="view" className="block">
-            <h2 className="text-3xl sm:text-4xl magic-title">{story.title}</h2>
-          </MagicAura>
+          <h2 className="text-3xl sm:text-4xl magic-title">{story.title}</h2>
           <p className="text-sm leading-relaxed text-night-800 magic-dropcap">{story.body}</p>
-          <MagicAura intensity="medium" colorVariant="gold" trigger="hover" className="inline-block">
-            <MagicButton href={story.ctaHref}>{story.ctaLabel}</MagicButton>
-          </MagicAura>
+          <MagicButton href={story.ctaHref}>{story.ctaLabel}</MagicButton>
         </Reveal>
       </Section>
 
       <Section className="space-y-8">
         <Reveal className="space-y-4">
-          <MagicAura intensity="soft" colorVariant="lavender" trigger="view" className="block">
-            <h2 className="text-3xl sm:text-4xl magic-title">{schedule.title}</h2>
-          </MagicAura>
+          <h2 className="text-3xl sm:text-4xl magic-title">{schedule.title}</h2>
           <p className="text-sm text-night-800">{schedule.subtitle}</p>
         </Reveal>
         <Stagger className="flex flex-wrap gap-3" stagger={0.08}>
@@ -114,9 +103,7 @@ export default function HomePage() {
           ))}
         </Stagger>
         <Reveal>
-          <MagicAura intensity="medium" colorVariant="gold" trigger="hover" className="inline-block">
-            <MagicButton href={schedule.ctaHref}>{schedule.ctaLabel}</MagicButton>
-          </MagicAura>
+          <MagicButton href={schedule.ctaHref}>{schedule.ctaLabel}</MagicButton>
         </Reveal>
       </Section>
 
@@ -147,13 +134,9 @@ export default function HomePage() {
 
       <Section className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <Reveal className="space-y-4" variant="fadeUp">
-          <MagicAura intensity="soft" colorVariant="rose" trigger="view" className="block">
-            <h2 className="text-3xl sm:text-4xl whitespace-pre-line magic-title">{event.title}</h2>
-          </MagicAura>
+          <h2 className="text-3xl sm:text-4xl whitespace-pre-line magic-title">{event.title}</h2>
           <p className="text-sm text-night-800">{event.body}</p>
-          <MagicAura intensity="medium" colorVariant="gold" trigger="hover" className="inline-block">
-            <MagicButton href={event.ctaHref}>{event.ctaLabel}</MagicButton>
-          </MagicAura>
+          <MagicButton href={event.ctaHref}>{event.ctaLabel}</MagicButton>
         </Reveal>
         <Reveal variant="scaleIn" delay={0.1}>
           <Card className="space-y-3 bg-white/80">
@@ -172,12 +155,8 @@ export default function HomePage() {
       <section className="relative">
         <Section className="relative z-10 space-y-6 text-night-900">
           <Reveal className="space-y-6" variant="fadeUp">
-            <MagicAura intensity="medium" colorVariant="lavender" trigger="view" className="block">
-              <h2 className="text-3xl sm:text-4xl magic-title">{finalGallery.headline}</h2>
-            </MagicAura>
-            <MagicAura intensity="strong" colorVariant="gold" trigger="hover" className="inline-block">
-              <MagicButton href={finalGallery.buttonHref}>{finalGallery.buttonLabel}</MagicButton>
-            </MagicAura>
+            <h2 className="text-3xl sm:text-4xl magic-title">{finalGallery.headline}</h2>
+            <MagicButton href={finalGallery.buttonHref}>{finalGallery.buttonLabel}</MagicButton>
           </Reveal>
         </Section>
       </section>

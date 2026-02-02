@@ -16,9 +16,6 @@
   --sparkle-opacity-strong: 0.85;
   --sparkle-shimmer-opacity: 0.5;
   --motif-opacity: 0.03;
-  --aura-rose: 250, 214, 231;
-  --aura-lavender: 150, 127, 213;
-  --aura-gold: 211, 166, 50;
 }
 
 @layer base {
@@ -189,84 +186,6 @@ body.reduce-motion .magic-motif {
     radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
     radial-gradient(circle at 50% 75%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px);
   background-size: 240px 240px, 280px 280px, 260px 260px;
-}
-
-/* Magic aura utility */
-.magic-aura {
-  position: relative;
-  display: inline-block;
-  --aura-opacity: 0;
-  --aura-alpha: 0.3;
-  --aura-blur: 28px;
-  --aura-spread: 12px;
-  --aura-color: var(--aura-rose);
-}
-
-.magic-aura::before {
-  content: '';
-  position: absolute;
-  inset: calc(-1 * var(--aura-spread));
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(var(--aura-color), var(--aura-alpha)) 0%, rgba(var(--aura-color), 0) 70%);
-  opacity: var(--aura-opacity);
-  filter: blur(var(--aura-blur));
-  transition: opacity 1.2s ease;
-  pointer-events: none;
-  z-index: -1;
-  mix-blend-mode: screen;
-}
-
-.magic-aura--hover:hover::before {
-  opacity: 1;
-}
-
-.magic-aura--soft {
-  --aura-alpha: 0.22;
-  --aura-blur: 24px;
-  --aura-spread: 10px;
-}
-
-.magic-aura--medium {
-  --aura-alpha: 0.32;
-  --aura-blur: 30px;
-  --aura-spread: 14px;
-}
-
-.magic-aura--strong {
-  --aura-alpha: 0.4;
-  --aura-blur: 36px;
-  --aura-spread: 18px;
-}
-
-.magic-aura--rose {
-  --aura-color: var(--aura-rose);
-}
-
-.magic-aura--lavender {
-  --aura-color: var(--aura-lavender);
-}
-
-.magic-aura--gold {
-  --aura-color: var(--aura-gold);
-}
-
-.magic-aura--reduced::before {
-  transition: none;
-  opacity: 0.6;
-}
-
-body.no-aura .magic-aura::before {
-  opacity: 0 !important;
-}
-
-body.reduce-motion .magic-aura::before {
-  transition: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .magic-aura::before {
-    transition: none;
-  }
 }
 
 /* Subtle typography magic */

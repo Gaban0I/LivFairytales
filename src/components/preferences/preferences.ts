@@ -2,7 +2,6 @@ export type AccessibilityPrefs = {
   reduceMotion: boolean;
   disableSparkles: boolean;
   disableMotifs: boolean;
-  disableAura: boolean;
 };
 
 export const ACCESSIBILITY_STORAGE_KEY = 'livfairytales-accessibility';
@@ -11,7 +10,6 @@ export const defaultPrefs: AccessibilityPrefs = {
   reduceMotion: false,
   disableSparkles: false,
   disableMotifs: false,
-  disableAura: false,
 };
 
 export const readPrefs = (): AccessibilityPrefs => {
@@ -45,5 +43,4 @@ export const applyPrefs = (prefs: AccessibilityPrefs) => {
   body.classList.toggle('reduce-motion', prefs.reduceMotion || systemReduce);
   body.classList.toggle('no-sparkle', prefs.disableSparkles);
   body.classList.toggle('no-motif', prefs.disableMotifs);
-  body.classList.toggle('no-aura', prefs.disableAura);
 };
