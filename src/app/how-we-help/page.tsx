@@ -65,15 +65,15 @@ export default function HowWeHelpPage() {
       ))}
 
       <Section className="grid gap-6 lg:grid-cols-2">
-        <Reveal>
-          <Card className="space-y-3">
+        <Reveal className="h-full">
+          <Card className="flex h-full flex-col gap-3">
             <h3 className="text-2xl">{impact.title}</h3>
             <SparkleDivider />
             <p className="text-sm text-night-800">{impact.body}</p>
           </Card>
         </Reveal>
-        <Reveal delay={0.1}>
-          <Card className="space-y-3">
+        <Reveal delay={0.1} className="h-full">
+          <Card className="flex h-full flex-col gap-3">
             <h3 className="text-2xl">{safety.title}</h3>
             <SparkleDivider />
             <p className="text-sm text-night-800">{safety.body}</p>

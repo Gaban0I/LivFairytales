@@ -21,10 +21,10 @@ export default function NotFound() {
   return (
     <Section className="flex min-h-[60vh] items-center justify-center">
       <Reveal>
-        <Card className="max-w-xl space-y-4 text-center">
+        <Card className="flex max-w-xl flex-col gap-4 text-center">
           <h1 className="text-4xl">{siteContent.notFound.title}</h1>
           <p className="text-sm text-night-800">{siteContent.notFound.body}</p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="mt-auto flex flex-wrap justify-center gap-3">
             <Button href="/">{siteContent.notFound.ctaHome}</Button>
             <Button variant="secondary" href="/contact">
               {siteContent.notFound.ctaContact}

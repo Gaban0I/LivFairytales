@@ -41,9 +41,9 @@ export default function ContactPage() {
             </Card>
           </Reveal>
           <Reveal delay={0.1}>
-            <Card className="space-y-3">
+            <Card className="flex flex-col gap-3">
               <h2 className="text-2xl">{social.title}</h2>
-              <div className="flex flex-wrap gap-3">
+              <div className="mt-auto flex flex-wrap gap-3">
                 {siteContent.socialLinks.map((link) => (
                   <Button key={link.href} variant="secondary" href={link.href}>
                     {link.label}

@@ -39,8 +39,8 @@ export default function BookPage() {
           </Reveal>
           <Stagger className="grid gap-6 md:grid-cols-2" stagger={0.1}>
             {section.cards.map((card) => (
-              <StaggerItem key={card.title} variant="scaleIn" hoverLift>
-                <Card className="space-y-4">
+              <StaggerItem key={card.title} variant="scaleIn" hoverLift className="h-full">
+                <Card className="flex h-full flex-col gap-4">
                   <div className="relative h-48 overflow-hidden rounded-2xl">
                     <Image
                       src={card.image.src}
@@ -61,7 +61,9 @@ export default function BookPage() {
                       </ul>
                     ) : null}
                   </div>
-                  <MagicButton href={card.ctaHref}>{card.ctaLabel}</MagicButton>
+                  <div className="mt-auto">
+                    <MagicButton href={card.ctaHref}>{card.ctaLabel}</MagicButton>
+                  </div>
                 </Card>
               </StaggerItem>
             ))}

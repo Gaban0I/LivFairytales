@@ -28,13 +28,15 @@ export default function SupportPage() {
           <p className="text-sm text-night-800">{donation.body}</p>
           <Button href={donation.ctaHref}>{donation.ctaLabel}</Button>
         </Reveal>
-        <Reveal delay={0.1}>
-          <Card className="space-y-3">
+        <Reveal delay={0.1} className="h-full">
+          <Card className="flex h-full flex-col gap-3">
             <h2 className="text-2xl">{donation.cardTitle}</h2>
             <p className="text-sm text-night-800">{donation.cardBody}</p>
-            <Button variant="secondary" href="/contact">
-              {donation.cardCtaLabel}
-            </Button>
+            <div className="mt-auto">
+              <Button variant="secondary" href="/contact">
+                {donation.cardCtaLabel}
+              </Button>
+            </div>
           </Card>
         </Reveal>
       </Section>
@@ -45,8 +47,8 @@ export default function SupportPage() {
         </Reveal>
         <div className="grid gap-6 md:grid-cols-3">
           {ways.items.map((item, index) => (
-            <Reveal key={item.title} delay={index * 0.08}>
-              <Card className="space-y-3">
+            <Reveal key={item.title} delay={index * 0.08} className="h-full">
+              <Card className="flex h-full flex-col gap-3">
                 <h3 className="text-xl">{item.title}</h3>
                 <p className="text-sm text-night-800">{item.body}</p>
               </Card>

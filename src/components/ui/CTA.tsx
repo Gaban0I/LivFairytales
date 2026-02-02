@@ -23,13 +23,13 @@ export function CTA({
   children,
 }: CTAProps) {
   return (
-    <Card className="space-y-6 bg-white/80">
+    <Card className="flex flex-col gap-6 bg-white/80">
       <div className="space-y-3">
         <h3 className="text-3xl">{title}</h3>
         <p className="text-sm leading-relaxed text-night-800">{body}</p>
       </div>
       {children}
-      <div className="flex flex-wrap gap-3">
+      <div className="mt-auto flex flex-wrap gap-3">
         <Button href={primaryHref}>{primaryLabel}</Button>
         {secondaryLabel && secondaryHref ? (
           <Button variant="secondary" href={secondaryHref}>

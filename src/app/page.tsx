@@ -109,20 +109,24 @@ export default function HomePage() {
 
       <Section>
         <Stagger className="grid gap-6 lg:grid-cols-2" stagger={0.1}>
-          <StaggerItem>
-            <Card className="space-y-4">
+          <StaggerItem className="h-full">
+            <Card className="flex h-full flex-col gap-4">
               <h3 className="text-2xl">{join.title}</h3>
               <p className="text-sm text-night-800">{join.body}</p>
-              <MagicButton href={join.ctaHref}>{join.ctaLabel}</MagicButton>
+              <div className="mt-auto">
+                <MagicButton href={join.ctaHref}>{join.ctaLabel}</MagicButton>
+              </div>
             </Card>
           </StaggerItem>
-          <StaggerItem>
-            <Card className="space-y-4">
+          <StaggerItem className="h-full">
+            <Card className="flex h-full flex-col gap-4">
               <h3 className="text-2xl">{donate.title}</h3>
               <p className="text-sm text-night-800">{donate.body}</p>
-              <Button variant="secondary" href={donate.ctaHref}>
-                {donate.ctaLabel}
-              </Button>
+              <div className="mt-auto">
+                <Button variant="secondary" href={donate.ctaHref}>
+                  {donate.ctaLabel}
+                </Button>
+              </div>
             </Card>
           </StaggerItem>
         </Stagger>
