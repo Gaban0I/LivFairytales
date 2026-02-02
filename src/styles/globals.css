@@ -12,6 +12,9 @@
 }
 :root {
   color-scheme: only light;
+  --sparkle-opacity: 0.6;
+  --sparkle-opacity-strong: 0.85;
+  --sparkle-shimmer-opacity: 0.5;
 }
 
 @layer base {
@@ -28,6 +31,104 @@
   h1, h2, h3, h4 {
     @apply font-title text-night-900;
   }
+}
+
+/* Sparkle background (global) */
+body.sparkle-bg {
+  position: relative;
+}
+
+body.sparkle-bg::before,
+body.sparkle-bg::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: repeat;
+  background-blend-mode: screen;
+}
+
+body.sparkle-bg::before {
+  opacity: var(--sparkle-opacity);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='12,1%2015,9%2023,12%2015,15%2012,23%209,15%201,12%209,9' fill='rgba(255,255,255,0.9)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpolygon points='10,1%2012,7%2019,10%2012,13%2010,19%208,13%201,10%208,7' fill='rgba(255,255,255,0.75)'/%3E%3C/svg%3E"),
+    linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.25), transparent 60%);
+  background-size: 9px 9px, 13px 13px, 400% 100%;
+  animation: sparkle-twinkle 10s ease-in-out infinite, sparkle-drift 50s linear infinite,
+    sparkle-shimmer 26s ease-in-out infinite;
+}
+
+body.sparkle-bg::after {
+  opacity: var(--sparkle-opacity-strong);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpolygon points='14,1%2018,10%2027,14%2018,18%2014,27%2010,18%201,14%2010,10' fill='rgba(255,255,255,0.85)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,1%2020,12%2031,16%2020,20%2016,31%2012,20%201,16%2012,12' fill='rgba(255,255,255,0.65)'/%3E%3C/svg%3E");
+  background-size: 16px 16px, 21px 21px;
+  animation: sparkle-twinkle 14s ease-in-out infinite 1.5s, sparkle-drift-large 70s linear infinite;
+}
+
+@keyframes sparkle-twinkle {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle-drift {
+  0% {
+    background-position: 0 0, 30px 40px, -200% 0;
+  }
+  100% {
+    background-position: 80px -60px, -40px 70px, 200% 0;
+  }
+}
+
+@keyframes sparkle-drift-large {
+  0% {
+    background-position: 0 0, 40px -30px;
+  }
+  100% {
+    background-position: 90px -70px, -60px 80px;
+  }
+}
+
+@keyframes sparkle-shimmer {
+  0%, 100% {
+    opacity: var(--sparkle-shimmer-opacity);
+  }
+  50% {
+    opacity: 0.12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.sparkle-bg::before,
+  body.sparkle-bg::after {
+    animation: none;
+  }
+}
+
+/* Optional: boost sparkle locally (ex: hero) */
+.sparkle-boost {
+  position: relative;
+}
+
+.sparkle-boost::before {
+  content: '';
+  position: absolute;
+  inset: -10%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: calc(var(--sparkle-opacity) + 0.05);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 50% 75%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px);
+  background-size: 240px 240px, 280px 280px, 260px 260px;
 }
 
 @layer components {

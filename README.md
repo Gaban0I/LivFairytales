@@ -78,3 +78,21 @@ Animations respect `prefers-reduced-motion`. To test:
 
 - macOS: System Settings → Accessibility → Display → Reduce motion
 - Windows: Settings → Accessibility → Visual effects → Animation effects
+
+## Scintillement global (sparkle)
+
+Le scintillement du fond est appliqué globalement via `body.sparkle-bg` dans `src/styles/globals.css`.
+
+### Réglages rapides
+- Intensité globale: `--sparkle-opacity` et `--sparkle-opacity-strong`
+- Shimmer léger: `--sparkle-shimmer-opacity`
+- Densité/tailles: modifier les `background-size` et le nombre de `radial-gradient(...)`
+- Vitesse: ajuster `sparkle-twinkle`, `sparkle-drift`, `sparkle-shimmer`
+
+### Accessibilité (prefers-reduced-motion)
+Si l’utilisateur préfère réduire les animations, elles sont désactivées automatiquement via:
+`@media (prefers-reduced-motion: reduce) { ... }`
+
+### Option locale (bonus)
+Pour renforcer l’effet sur une section précise:
+- Ajouter la classe `sparkle-boost` sur la section voulue.
