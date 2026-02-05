@@ -19,8 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const { hero, timeline, timelineTitle, board, boardSubtitle, news, newsSubtitle, newsReadMoreLabel } =
-    siteContent.about;
+  const { hero, timeline, timelineTitle, board, boardSubtitle } = siteContent.about;
 
   return (
     <div>
@@ -87,6 +86,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      {/* Section medias temporairement desactivee
       <Section id="in-the-news" className="space-y-8">
         <Reveal className="space-y-3">
           <h2 className="text-3xl sm:text-4xl">{news.title}</h2>
@@ -110,6 +110,7 @@ export default function AboutPage() {
           ))}
         </div>
       </Section>
+      */}
     </div>
   );
 }

@@ -627,7 +627,7 @@ export const siteContent: SiteContent = {
           name: 'Bénévole principal',
           role: 'Coordinateur des visites',
           bio: 'Organisation des visites et accompagnement des nouveaux bénévoles.',
-          image: { src: '/images/team-2.jpg', alt: 'Coordinateur des visites' },
+          image: { src: '/images/bénévoles.jpg', alt: 'Coordinateur des visites' },
         },
         {
           name: 'Équipe soignante',
