@@ -3,18 +3,45 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa6';
+import { FaChevronDown, FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa6';
 
 import { siteContent } from '@/content/siteContent';
 
 function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   const pathname = usePathname();
+  const [currentHash, setCurrentHash] = useState<string>('');
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+
+  useEffect(() => {
+    const updateHash = () => {
+      setCurrentHash(window.location.hash || '');
+    };
+
+    updateHash();
+    window.addEventListener('hashchange', updateHash);
+    return () => {
+      window.removeEventListener('hashchange', updateHash);
+    };
+  }, [pathname]);
 
   const isActive = (href?: string) => {
     if (!href) return false;
-    if (href === '/') return pathname === '/';
-    return pathname.startsWith(href);
+    const [hrefPathRaw, hrefHash] = href.split('#');
+    const hrefPath = hrefPathRaw || '/';
+
+    if (hrefHash) {
+      return pathname === hrefPath && currentHash === `#${hrefHash}`;
+    }
+
+    if (hrefPath === '/') {
+      return pathname === '/' && currentHash === '';
+    }
+
+    if (currentHash && pathname === hrefPath) {
+      return false;
+    }
+
+    return pathname.startsWith(hrefPath);
   };
 
   const handleNavigate = () => {
@@ -43,8 +70,10 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
               }}
             >
               <button
-                className={`flex items-center gap-2 text-sm font-semibold transition transform-gpu hover:scale-105 ${
-                  childActive ? 'text-gold-400' : 'text-night-900'
+                className={`group flex w-full items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold transition transform-gpu hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-200 lg:w-auto ${
+                  childActive || isOpen
+                    ? 'bg-blush-100 text-gold-500'
+                    : 'text-night-900 hover:bg-blush-50 hover:text-gold-500'
                 }`}
                 aria-haspopup="true"
                 aria-expanded={isOpen}
@@ -58,8 +87,13 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                 }}
               >
                 {item.label}
-                <span className={`transition ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true">
-                  v
+                <span
+                  className={`flex h-6 w-6 items-center justify-center rounded-full border border-transparent transition ${
+                    isOpen ? 'rotate-180 bg-white text-gold-500' : 'text-night-700 group-hover:bg-white'
+                  }`}
+                  aria-hidden="true"
+                >
+                  <FaChevronDown className="h-3 w-3" />
                 </span>
               </button>
               <div
@@ -70,6 +104,10 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                   isOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
                 }`}
               >
+                <span
+                  className="absolute left-6 top-0 h-3 w-3 -translate-y-1/2 rotate-45 border border-white/70 bg-white/95"
+                  aria-hidden="true"
+                />
                 <ul className="space-y-2">
                   {item.children.map((child) => (
                     <li key={child.href}>
