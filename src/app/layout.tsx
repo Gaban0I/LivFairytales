@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Cinzel_Decorative, Great_Vibes, Montserrat } from 'next/font/google';
 
 import '@/styles/globals.css';
@@ -7,8 +7,9 @@ import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 import { PreferencesProvider } from '@/components/preferences/PreferencesProvider';
 import { siteContent } from '@/content/siteContent';
+import { SeoJsonLd } from '@/components/SeoJsonLd';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://livfairytales.com';
 
 const titleFont = Cinzel_Decorative({
   subsets: ['latin'],
@@ -39,20 +40,17 @@ export const metadata: Metadata = {
     description: siteContent.metadata.home.description,
     images: [siteContent.metadata.home.ogImage],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteContent.metadata.home.title,
+    description: siteContent.metadata.home.description,
+    images: [siteContent.metadata.home.ogImage],
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${titleFont.variable} ${accentFont.variable} ${bodyFont.variable}`}>
-      <body className="sparkle-bg">
-        <PreferencesProvider />
-        <div className="magic-motif" aria-hidden="true" />
-        <div className="relative z-10 flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
-      </body>
-    </html>
-  );
-}
+    <html lang="fr" className={`${titleFont.variable} ${accentFont.variable} ${bodyFont.variable}`}>\n      <body className="sparkle-bg">\n        <PreferencesProvider />\n        <SeoJsonLd />\n        <div className="magic-motif" aria-hidden="true" />\n        <div className="relative z-10 flex min-h-screen flex-col">\n          <SiteHeader />\n          <main className="flex-1">{children}</main>\n          <SiteFooter />\n        </div>\n      </body>\n    </html>\n  );\n}
