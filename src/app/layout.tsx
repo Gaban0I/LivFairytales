@@ -20,7 +20,7 @@ const structuredData = {
       email: 'livfairytales@gmail.com',
       founder: 'Olivia Guzniczak',
       sameAs: siteContent.socialLinks.map((link) => link.href),
-      logo: `${siteUrl}/images/placeholder-logo.png`,
+      logo: `${siteUrl}/images/logo.png`,
     },
     {
       '@type': 'WebSite',
@@ -84,6 +84,18 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/icon-64.png', sizes: '64x64', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: ['/favicon.ico'],
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
