@@ -44,8 +44,14 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
     return pathname.startsWith(hrefPath);
   };
 
-  const handleNavigate = () => {
+  const handleNavigate = (href?: string) => {
     setOpenDropdown(null);
+    if (href) {
+      const hashIndex = href.indexOf('#');
+      setCurrentHash(hashIndex >= 0 ? `#${href.slice(hashIndex + 1)}` : '');
+    } else {
+      setCurrentHash('');
+    }
     onNavigate?.();
   };
 
@@ -54,12 +60,13 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
       {siteContent.navigation.primary.map((item, index) => {
         if (item.children && item.children.length > 0) {
           const childActive = item.children.some((child) => isActive(child.href));
+          const parentActive = childActive || isActive(item.href);
           const isOpen = openDropdown === index;
           const menuId = `nav-submenu-${index}`;
           return (
             <li
               key={item.label}
-              className="relative"
+              className="relative group"
               onMouseEnter={() => setOpenDropdown(index)}
               onMouseLeave={() => setOpenDropdown(null)}
               onBlur={(event) => {
@@ -69,33 +76,52 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                 }
               }}
             >
-              <button
-                className={`group flex w-full items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold transition transform-gpu hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-200 lg:w-auto ${
-                  childActive || isOpen
-                    ? 'bg-blush-100 text-gold-500'
-                    : 'text-night-900 hover:bg-blush-50 hover:text-gold-500'
-                }`}
-                aria-haspopup="true"
-                aria-expanded={isOpen}
-                aria-controls={menuId}
-                type="button"
-                onClick={() => setOpenDropdown(isOpen ? null : index)}
-                onKeyDown={(event) => {
-                  if (event.key === 'Escape') {
-                    setOpenDropdown(null);
-                  }
-                }}
-              >
-                {item.label}
-                <span
-                  className={`flex h-6 w-6 items-center justify-center rounded-full border border-transparent transition ${
-                    isOpen ? 'rotate-180 bg-white text-gold-500' : 'text-night-700 group-hover:bg-white'
+              <div className="flex items-center gap-1">
+                {item.href ? (
+                  <Link
+                    className={`flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold transition transform-gpu hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-200 ${
+                      parentActive || isOpen
+                        ? 'bg-blush-100 text-gold-500'
+                        : 'text-night-900 hover:bg-blush-50 hover:text-gold-500'
+                    }`}
+                    href={item.href}
+                    onClick={() => handleNavigate(item.href)}
+                    aria-current={isActive(item.href) ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span
+                    className={`flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold ${
+                      parentActive || isOpen ? 'bg-blush-100 text-gold-500' : 'text-night-900'
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                )}
+                <button
+                  className={`flex h-9 w-9 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-200 ${
+                    parentActive || isOpen ? 'bg-blush-100 text-gold-500' : 'text-night-700 hover:bg-blush-50'
                   }`}
-                  aria-hidden="true"
+                  aria-haspopup="true"
+                  aria-expanded={isOpen}
+                  aria-controls={menuId}
+                  type="button"
+                  onClick={() => setOpenDropdown(isOpen ? null : index)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Escape') {
+                      setOpenDropdown(null);
+                    }
+                  }}
                 >
-                  <FaChevronDown className="h-3 w-3" />
-                </span>
-              </button>
+                  <span
+                    className={`transition ${isOpen ? 'rotate-180' : ''}`}
+                    aria-hidden="true"
+                  >
+                    <FaChevronDown className="h-3 w-3" />
+                  </span>
+                </button>
+              </div>
               <div
                 id={menuId}
                 aria-label={item.label}
@@ -118,7 +144,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                             : 'text-night-800 hover:bg-blush-100'
                         }`}
                         href={child.href}
-                        onClick={handleNavigate}
+                        onClick={() => handleNavigate(child.href)}
                         aria-current={isActive(child.href) ? 'page' : undefined}
                       >
                         {child.label}
@@ -138,7 +164,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                 isActive(item.href) ? 'text-gold-400' : 'text-night-900 hover:text-gold-400'
               }`}
               href={item.href ?? '#'}
-              onClick={handleNavigate}
+              onClick={() => handleNavigate(item.href)}
               aria-current={isActive(item.href) ? 'page' : undefined}
             >
               {item.label}

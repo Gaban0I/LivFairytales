@@ -71,7 +71,10 @@ export default function AboutPage() {
                     src={member.image.src}
                     alt={member.image.alt}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${
+                      member.name === 'Viviane Usureau' ? 'object-top' : 'object-center'
+                    }`}
+                    style={member.name === 'Olivia Guzniczak' ? { objectPosition: '50% 20%' } : undefined}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>

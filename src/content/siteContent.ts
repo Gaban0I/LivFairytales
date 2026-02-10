@@ -261,10 +261,10 @@ export const siteContent: SiteContent = {
     primary: [
       {
         label: 'À propos',
+        href: '/about',
         children: [
           { label: 'Notre histoire', href: '/about' },
           { label: 'Équipe', href: '/about#executive-board' },
-          { label: 'Actualités', href: '/about#in-the-news' },
         ],
       },
       { label: 'Nos actions', href: '/how-we-help' },
@@ -619,21 +619,21 @@ export const siteContent: SiteContent = {
       members: [
         {
           name: 'Olivia Guzniczak',
-          role: 'Fondatrice',
+          role: 'Fondatrice et Présidente',
           bio: 'Diabétique de type 1 et aide-soignante en formation, elle a fondé Liv Fairytales pour offrir du rêve aux patients.',
-          image: { src: '/images/team-1.jpg', alt: 'Olivia Guzniczak' },
+          image: { src: '/images/Olivia.png', alt: 'Olivia Guzniczak' },
         },
         {
-          name: 'Bénévole principal',
-          role: 'Coordinateur des visites',
-          bio: 'Organisation des visites et accompagnement des nouveaux bénévoles.',
-          image: { src: '/images/bénévoles.jpg', alt: 'Coordinateur des visites' },
+          name: 'Viviane Usureau',
+          role: 'Chargée des bénévoles',
+          bio: 'Coordination et accompagnement des bénévoles.',
+          image: { src: '/images/Vivianne.png', alt: 'Viviane Usureau' },
         },
         {
-          name: 'Équipe soignante',
-          role: 'Référents santé',
-          bio: 'Garants du cadre médical, des formations et des bonnes pratiques.',
-          image: { src: '/images/team-3.jpg', alt: 'Équipe soignante' },
+          name: 'Les bénévoles',
+          role: 'Équipe engagée',
+          bio: 'Cosplayeurs, animateurs et passionnés unis pour offrir des moments magiques.',
+          image: { src: '/images/bénévoles.jpg', alt: 'Les bénévoles' },
         },
       ],
     },
@@ -773,7 +773,6 @@ export const siteContent: SiteContent = {
         links: [
           { label: 'Notre histoire', href: '/about' },
           { label: 'Équipe', href: '/about#executive-board' },
-          { label: 'Actualités', href: '/about#in-the-news' },
         ],
       },
       {
