@@ -106,6 +106,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                   aria-haspopup="true"
                   aria-expanded={isOpen}
                   aria-controls={menuId}
+                  aria-label={`${isOpen ? 'Fermer' : 'Ouvrir'} le menu ${item.label}`}
                   type="button"
                   onClick={() => setOpenDropdown(isOpen ? null : index)}
                   onKeyDown={(event) => {
@@ -125,7 +126,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
               <div
                 id={menuId}
                 aria-label={item.label}
-                aria-hidden={!isOpen}
+                hidden={!isOpen}
                 className={`absolute left-0 top-full z-20 min-w-[220px] rounded-2xl border border-white/70 bg-white/95 p-3 shadow-magic transition duration-200 ${
                   isOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
                 }`}
@@ -159,16 +160,20 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 
         return (
           <li key={item.label}>
-            <Link
-              className={`inline-block text-sm font-semibold transition transform-gpu hover:scale-105 ${
-                isActive(item.href) ? 'text-gold-400' : 'text-night-900 hover:text-gold-400'
-              }`}
-              href={item.href ?? '#'}
-              onClick={() => handleNavigate(item.href)}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-            >
-              {item.label}
-            </Link>
+            {item.href ? (
+              <Link
+                className={`inline-block text-sm font-semibold transition transform-gpu hover:scale-105 ${
+                  isActive(item.href) ? 'text-gold-400' : 'text-night-900 hover:text-gold-400'
+                }`}
+                href={item.href}
+                onClick={() => handleNavigate(item.href)}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <span className="inline-block text-sm font-semibold text-night-900">{item.label}</span>
+            )}
           </li>
         );
       })}

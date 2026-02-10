@@ -55,7 +55,7 @@ export default function HomePage() {
           </Stagger>
           <Reveal className="relative hidden items-center justify-center lg:flex" variant="scaleIn" delay={0.1}>
             <Card className="w-full max-w-sm space-y-4 bg-white/80">
-              <h3 className="text-2xl">{hero.card.title}</h3>
+              <h2 className="text-2xl">{hero.card.title}</h2>
               <p className="text-sm text-night-800">{hero.card.body}</p>
               <SparkleDivider />
               <div className="grid grid-cols-2 gap-3 text-xs font-semibold text-night-700">

@@ -490,7 +490,7 @@ export const siteContent: SiteContent = {
         cards: [
           {
             title: 'Visite en hôpital ou structure — 30 à 45 minutes',
-            description: 'Avec ACC.',
+            description: '',
             details: [
               'Entrée en musique (si les conditions le permettent).',
               'Activité manuelle adaptée aux capacités des participants.',
@@ -503,7 +503,7 @@ export const siteContent: SiteContent = {
           },
           {
             title: 'Visite “Bal” en EHPAD — 2h30',
-            description: 'Avec ACC.',
+            description: '',
             details: [
               'Entrée en musique (si les conditions le permettent).',
               'Chants et karaoké avec le personnage.',
