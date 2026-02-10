@@ -6,7 +6,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-[#f2cfd3] bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           {siteContent.footer.columns.map((column) => (
             <div key={column.title} className="space-y-4">
               <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-night-800">

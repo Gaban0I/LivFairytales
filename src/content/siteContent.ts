@@ -341,7 +341,7 @@ export const siteContent: SiteContent = {
       card: {
         title: 'Des visites 100% gratuites',
         body: 'Nos interventions sont bénévoles et adaptées à chaque structure et à chaque famille.',
-        stats: ['Hôpital', 'Domicile', 'EHPAD', 'Adolescents'],
+        stats: ['Hôpital', 'Domicile', 'EHPAD', 'Structures Médicales'],
       },
     },
     gallery: {
@@ -790,6 +790,14 @@ export const siteContent: SiteContent = {
           { label: 'Partenariats', href: '/extras/partnerships' },
           { label: 'Ressources', href: '/extras/resources' },
           { label: 'Accessibilité', href: '/extras/accessibility' },
+        ],
+      },
+      {
+        title: 'Légal',
+        links: [
+          { label: 'Mentions légales', href: '/legal/mentions-legales' },
+          { label: 'Politique de confidentialité', href: '/legal/politique-confidentialite' },
+          { label: "Droit à l'image", href: '/legal/droit-a-l-image' },
         ],
       },
       {
