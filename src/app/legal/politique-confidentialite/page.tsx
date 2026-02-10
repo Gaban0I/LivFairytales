@@ -14,10 +14,14 @@ const brandName = 'Liv Fairytales';
 export const metadata: Metadata = {
   title: `${title} - ${brandName}`,
   description,
+  alternates: {
+    canonical: '/legal/politique-confidentialite',
+  },
   openGraph: {
     title: `${title} - ${brandName}`,
     description,
     images: [siteContent.metadata.home.ogImage],
+    url: '/legal/politique-confidentialite',
   },
 };
 

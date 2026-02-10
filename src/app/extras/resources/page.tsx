@@ -5,13 +5,20 @@ import { Card } from '@/components/ui/Card';
 import { Reveal } from '@/components/motion/Reveal';
 import { siteContent } from '@/content/siteContent';
 
+const title = 'Ressources - Liv Fairytales';
+const description = "Documents et informations utiles pour accompagner vos demandes.";
+
 export const metadata: Metadata = {
-  title: siteContent.metadata.extras.title,
-  description: siteContent.metadata.extras.description,
+  title,
+  description,
+  alternates: {
+    canonical: '/extras/resources',
+  },
   openGraph: {
-    title: siteContent.metadata.extras.title,
-    description: siteContent.metadata.extras.description,
+    title,
+    description,
     images: [siteContent.metadata.extras.ogImage],
+    url: '/extras/resources',
   },
 };
 

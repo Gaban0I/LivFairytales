@@ -6,13 +6,20 @@ import { Reveal } from '@/components/motion/Reveal';
 import { AccessibilitySettings } from '@/components/preferences/AccessibilitySettings';
 import { siteContent } from '@/content/siteContent';
 
+const title = 'Accessibilité - Liv Fairytales';
+const description = 'Adaptez les effets visuels et les animations pour un confort optimal.';
+
 export const metadata: Metadata = {
-  title: siteContent.metadata.extras.title,
-  description: siteContent.metadata.extras.description,
+  title,
+  description,
+  alternates: {
+    canonical: '/extras/accessibility',
+  },
   openGraph: {
-    title: siteContent.metadata.extras.title,
-    description: siteContent.metadata.extras.description,
+    title,
+    description,
     images: [siteContent.metadata.extras.ogImage],
+    url: '/extras/accessibility',
   },
 };
 

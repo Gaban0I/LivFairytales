@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description: siteContent.metadata.notFound.description,
     images: [siteContent.metadata.notFound.ogImage],
   },
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function NotFound() {

@@ -5,13 +5,20 @@ import { Card } from '@/components/ui/Card';
 import { Reveal } from '@/components/motion/Reveal';
 import { siteContent } from '@/content/siteContent';
 
+const title = 'Merch solidaire - Liv Fairytales';
+const description = 'Une boutique solidaire pour soutenir nos actions, bientôt disponible.';
+
 export const metadata: Metadata = {
-  title: siteContent.metadata.extras.title,
-  description: siteContent.metadata.extras.description,
+  title,
+  description,
+  alternates: {
+    canonical: '/extras/merch',
+  },
   openGraph: {
-    title: siteContent.metadata.extras.title,
-    description: siteContent.metadata.extras.description,
+    title,
+    description,
     images: [siteContent.metadata.extras.ogImage],
+    url: '/extras/merch',
   },
 };
 

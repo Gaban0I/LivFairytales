@@ -5,13 +5,20 @@ import { Card } from '@/components/ui/Card';
 import { Reveal } from '@/components/motion/Reveal';
 import { siteContent } from '@/content/siteContent';
 
+const title = 'Partenariats solidaires - Liv Fairytales';
+const description = 'Construisons des actions solidaires avec votre structure ou entreprise.';
+
 export const metadata: Metadata = {
-  title: siteContent.metadata.extras.title,
-  description: siteContent.metadata.extras.description,
+  title,
+  description,
+  alternates: {
+    canonical: '/extras/partnerships',
+  },
   openGraph: {
-    title: siteContent.metadata.extras.title,
-    description: siteContent.metadata.extras.description,
+    title,
+    description,
     images: [siteContent.metadata.extras.ogImage],
+    url: '/extras/partnerships',
   },
 };
 

@@ -10,10 +10,14 @@ import { siteContent } from '@/content/siteContent';
 export const metadata: Metadata = {
   title: siteContent.metadata.contact.title,
   description: siteContent.metadata.contact.description,
+  alternates: {
+    canonical: '/contact',
+  },
   openGraph: {
     title: siteContent.metadata.contact.title,
     description: siteContent.metadata.contact.description,
     images: [siteContent.metadata.contact.ogImage],
+    url: '/contact',
   },
 };
 

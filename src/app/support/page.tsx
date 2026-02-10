@@ -10,10 +10,14 @@ import { siteContent } from '@/content/siteContent';
 export const metadata: Metadata = {
   title: siteContent.metadata.support.title,
   description: siteContent.metadata.support.description,
+  alternates: {
+    canonical: '/support',
+  },
   openGraph: {
     title: siteContent.metadata.support.title,
     description: siteContent.metadata.support.description,
     images: [siteContent.metadata.support.ogImage],
+    url: '/support',
   },
 };
 
