@@ -275,7 +275,7 @@ export const siteContent: SiteContent = {
         label: 'Extras',
         children: [
           { label: 'Merch', href: '/extras/merch' },
-          { label: 'Partenariats', href: '/extras/partnerships' },
+          { label: 'Partenariats', href: '/partnership' },
           { label: 'Ressources', href: '/extras/resources' },
           { label: 'Accessibilité', href: '/extras/accessibility' },
         ],
@@ -787,7 +787,7 @@ export const siteContent: SiteContent = {
         title: 'Extras',
         links: [
           { label: 'Merch', href: '/extras/merch' },
-          { label: 'Partenariats', href: '/extras/partnerships' },
+          { label: 'Partenariats', href: '/partnership' },
           { label: 'Ressources', href: '/extras/resources' },
           { label: 'Accessibilité', href: '/extras/accessibility' },
         ],
@@ -795,7 +795,7 @@ export const siteContent: SiteContent = {
       {
         title: 'Légal',
         links: [
-          { label: 'Mentions légales', href: '/legal/mentions-legales' },
+          { label: 'Mentions légales', href: '/mentions-legales' },
           { label: 'Politique de confidentialité', href: '/legal/politique-confidentialite' },
           { label: "Droit à l'image", href: '/legal/droit-a-l-image' },
         ],
