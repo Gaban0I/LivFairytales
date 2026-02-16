@@ -12,6 +12,10 @@ const description = 'Adaptez les effets visuels et les animations pour un confor
 export const metadata: Metadata = {
   title,
   description,
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: '/extras/accessibility',
   },

@@ -12,10 +12,6 @@ const routes: Array<{ path: string; priority: number; changeFrequency: MetadataR
   { path: '/extras/merch', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/extras/partnerships', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/extras/resources', priority: 0.6, changeFrequency: 'monthly' },
-  { path: '/extras/accessibility', priority: 0.5, changeFrequency: 'yearly' },
-  { path: '/legal/mentions-legales', priority: 0.4, changeFrequency: 'yearly' },
-  { path: '/legal/politique-confidentialite', priority: 0.4, changeFrequency: 'yearly' },
-  { path: '/legal/droit-a-l-image', priority: 0.4, changeFrequency: 'yearly' },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

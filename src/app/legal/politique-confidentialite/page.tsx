@@ -14,6 +14,10 @@ const brandName = 'Liv Fairytales';
 export const metadata: Metadata = {
   title: `${title} - ${brandName}`,
   description,
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: '/legal/politique-confidentialite',
   },
