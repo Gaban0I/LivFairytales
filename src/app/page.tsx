@@ -37,10 +37,10 @@ export default function HomePage() {
             <StaggerItem>
               <Badge>{hero.badge}</Badge>
             </StaggerItem>
-            <StaggerItem variant="fadeUp">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.15]">
+            <StaggerItem className="bg-transparent" variant="fadeUp">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.15] bg-transparent">
                 <span className="block magic-title leading-[1.2] pt-[0.06em]">{hero.titleLine1}</span>
-                <span className="block text-gold-400">{hero.titleLine2}</span>
+                <span className="block text-gold-400 bg-transparent">{hero.titleLine2}</span>
               </h1>
             </StaggerItem>
             <StaggerItem>
